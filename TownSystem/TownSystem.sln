@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.Models", "TownSystem.Models\TownSystem.Models.csproj", "{78FD5502-E904-4BA0-9DAC-D4C2D0A0D223}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.Data", "TownSystem.Data\TownSystem.Data.csproj", "{F5E641A1-55B0-4FAF-BBD2-EC98D20572E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.ConsoleClient", "TownSystem.ConsoleClient\TownSystem.ConsoleClient.csproj", "{9DEBB794-2495-413F-AE4C-7B8C7A4A924D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.Services", "TownSystem.Services\TownSystem.Services.csproj", "{CD86BD49-3EA9-4B09-9416-6BADD8B5A267}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9DEBB794-2495-413F-AE4C-7B8C7A4A924D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DEBB794-2495-413F-AE4C-7B8C7A4A924D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DEBB794-2495-413F-AE4C-7B8C7A4A924D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD86BD49-3EA9-4B09-9416-6BADD8B5A267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD86BD49-3EA9-4B09-9416-6BADD8B5A267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD86BD49-3EA9-4B09-9416-6BADD8B5A267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD86BD49-3EA9-4B09-9416-6BADD8B5A267}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
