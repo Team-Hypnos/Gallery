@@ -30,8 +30,8 @@
         [MaxLength(50)]
         public string Password { get; set; }
 
-        public virtual ICollection<Post> Posts {get; set;}
-      
-        public virtual ICollection<Comment> Comments {get; set;}
+        public virtual ICollection<Post> Posts { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

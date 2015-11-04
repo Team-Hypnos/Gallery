@@ -2,10 +2,9 @@
 {
     using System;
     using System.Data.Entity;
-    using System.Linq;
-    using TownSystem.Data;
-    using TownSystem.Data.Migrations;
-    using TownSystem.Models;
+    using Data;
+    using Data.Migrations;
+    using Models;
 
     public class Starup
     {
@@ -22,13 +21,13 @@
             Console.WriteLine("Testing for adding town");
             data.Add(town);
 
-            //Deleting
-            //var towns = data.All();
-            //foreach (var t in towns)
-            //{
+            // Deleting
+            // var towns = data.All();
+            // foreach (var t in towns)
+            // {
             //    data.Delete(t);
-            //}
-            
+            // }
+
             data.SaveChanges();
         }
     }

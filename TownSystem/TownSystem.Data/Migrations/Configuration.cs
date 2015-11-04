@@ -9,7 +9,7 @@ namespace TownSystem.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(TownSystemDbContext context)

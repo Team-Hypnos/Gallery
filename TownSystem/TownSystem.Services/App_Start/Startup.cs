@@ -5,9 +5,9 @@
     using Microsoft.Owin;
     using Microsoft.Owin.Security.Cookies;
     using Microsoft.Owin.Security.OAuth;
+    using Models;
     using Owin;
     using Providers;
-    using Models;
 
     public partial class Startup
     {
@@ -43,23 +43,23 @@
             app.UseOAuthBearerTokens(OAuthOptions);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
+            // app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
+            // app.UseTwitterAuthentication(
             //    consumerKey: "",
             //    consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
+            // app.UseFacebookAuthentication(
             //    appId: "",
             //    appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
+            // app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            // {
             //    ClientId = "",
             //    ClientSecret = ""
-            //});
+            // });
         }
     }
 }
