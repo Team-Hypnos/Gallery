@@ -12,6 +12,7 @@ namespace TownSystem.Services
     using Ninject.Extensions.Conventions;
     using Ninject.Web.Common;
     using Data;
+    using Common.Constants;
 
     public static class NinjectConfig
     {
@@ -66,7 +67,7 @@ namespace TownSystem.Services
             kernel.Bind<ITownSystemDbContext>().To<TownSystemDbContext>().InRequestScope();
             kernel.Bind(typeof(IRepository<>)).To(typeof(EfGenericRepository<>));
 
-            kernel.Bind(b => b.From("TownSystem.Services.Data")
+            kernel.Bind(b => b.From(Assemblies.DataServices)
             .SelectAllClasses()
             .BindDefaultInterface());
 
