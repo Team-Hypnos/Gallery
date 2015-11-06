@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulgaria Best Town</title>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="content/additional-styles.css"/>
+</head>
+<body ng-app="galleryApp" ng-controller="MainController" ng-cloak>
+    <div navigation-bar></div>
+    <div id="main-container" ng-view></div>
+    <div id="footer" footer></div>
+
+    <!-- Libraries -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Services -->
+    <script src="scripts/services/userAuthentication.js"></script>
+
+    <!-- Main application -->
+    <script src="scripts/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="scripts/controllers/MainController.js"></script>
+    <script src="scripts/controllers/HomeController.js"></script>
+    <script src="scripts/controllers/SignInController.js"></script>
+    <script src="scripts/controllers/SignUpController.js"></script>
+
+    <!-- Directives -->
+    <script src="scripts/directives/NavigationDirective.js"></script>
+    <script src="scripts/directives/FooterDirective.js"></script>
+</body>
+</html>

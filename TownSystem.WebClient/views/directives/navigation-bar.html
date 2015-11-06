@@ -1,0 +1,46 @@
+<div class="navbar navbar-default navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#/home" class="navbar-brand" id="application-title">Bulgaria Best_ Town</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#/home" class="hvr-underline-from-center">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="hvr-underline-from-center">Towns</a>
+                </li>
+                <li>
+                    <a href="#" class="hvr-underline-from-center">Categories</a>
+                </li>
+                <li ng-show="isLoggedIn">
+                    <a href="#" class="hvr-underline-from-center">Post</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" ng-hide="isLoggedIn">
+                <li>
+                    <a href="#/signup" class="hvr-underline-from-center">Register</a>
+                </li>
+                <li>
+                    <a href="#/signin" class="hvr-underline-from-center">Login</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" ng-show="isLoggedIn">
+                <li>
+                    <a href="#" class="hvr-underline-from-center">Hello, {{ username }}</a>
+                </li>
+                <li>
+                    <a class="hvr-underline-from-center" ng-click="signOut()">Sign out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

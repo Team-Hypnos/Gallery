@@ -1,0 +1,46 @@
+<div class="container center-block">
+    <br/>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+            <div class="panel panel-primary" ng-controller="SignInController">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Log in</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 login-box">
+                            <form role="form" name="signInForm">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input type="text" class="form-control" placeholder="Username" required autofocus ng-model="username"/>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                    <input type="password" class="form-control" placeholder="Password" required ng-model="password"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-9 col-sm-9 col-md-9">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="Remember"/>
+                                    Remember me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3">
+                            <button type="button" class="btn btn-labeled btn-success"
+                                    ng-disabled="signInForm.$pristine || signInForm.$invalid"
+                                    ng-click="signIn(username, password)">
+                                <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Sign In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
