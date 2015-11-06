@@ -11,8 +11,9 @@ namespace TownSystem.Services
     using Ninject;
     using Ninject.Extensions.Conventions;
     using Ninject.Web.Common;
-    using Data;
     using Common.Constants;
+    using Data;
+    using Infrastructure;
 
     public static class NinjectConfig
     {
@@ -47,6 +48,8 @@ namespace TownSystem.Services
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+
+                ObjectFactory.Initialize(kernel);
 
                 RegisterServices(kernel);
                 return kernel;
