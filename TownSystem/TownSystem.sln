@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.ConsoleClient", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.Services", "TownSystem.Services\TownSystem.Services.csproj", "{CD86BD49-3EA9-4B09-9416-6BADD8B5A267}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.Services.Data", "TownSystem.Services.Data\TownSystem.Services.Data.csproj", "{38D3CB1C-0296-4983-AE16-E1C7C8503484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.Common", "TownSystem.Common\TownSystem.Common.csproj", "{FAAA9A08-14A8-4470-943B-FC0D4A78D996}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{CD86BD49-3EA9-4B09-9416-6BADD8B5A267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD86BD49-3EA9-4B09-9416-6BADD8B5A267}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD86BD49-3EA9-4B09-9416-6BADD8B5A267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38D3CB1C-0296-4983-AE16-E1C7C8503484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D3CB1C-0296-4983-AE16-E1C7C8503484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D3CB1C-0296-4983-AE16-E1C7C8503484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D3CB1C-0296-4983-AE16-E1C7C8503484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAAA9A08-14A8-4470-943B-FC0D4A78D996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAAA9A08-14A8-4470-943B-FC0D4A78D996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAAA9A08-14A8-4470-943B-FC0D4A78D996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAAA9A08-14A8-4470-943B-FC0D4A78D996}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
