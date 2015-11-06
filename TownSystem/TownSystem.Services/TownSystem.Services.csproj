@@ -221,6 +221,7 @@
     </Compile>
     <Compile Include="Infrastructure\Mapping\IHaveCustomMappings.cs" />
     <Compile Include="Infrastructure\Mapping\IMapFrom.cs" />
+    <Compile Include="Infrastructure\ObjectFactory.cs" />
     <Compile Include="Models\AccountBindingModels\AddExternalLoginBindingModel.cs" />
     <Compile Include="Models\AccountViewModels\ExternalLoginViewModel.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
