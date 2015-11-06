@@ -3,7 +3,7 @@
     using System.Data.Entity;
     using TownSystem.Models;
 
-    public class TownSystemDbContext : DbContext
+    public class TownSystemDbContext : DbContext, ITownSystemDbContext
     {
         public TownSystemDbContext()
             : base("TownSystem")
