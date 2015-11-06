@@ -62,6 +62,7 @@ namespace TownSystem.Services
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<ITownSystemDbContext>().To<TownSystemDbContext>();
             kernel.Bind(typeof(IRepository<>)).To(typeof(EfGenericRepository<>));
         }
     }
