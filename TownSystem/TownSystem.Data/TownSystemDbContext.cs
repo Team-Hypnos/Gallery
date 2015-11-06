@@ -22,5 +22,10 @@
         public virtual IDbSet<User> Users { get; set; }
 
         public virtual IDbSet<Comment> Comments { get; set; }
+
+        public static TownSystemDbContext Create()
+        {
+            return new TownSystemDbContext();
+        }
     }
 }

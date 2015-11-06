@@ -1,13 +1,16 @@
 ﻿namespace TownSystem.Services
 {
+    using System.Reflection;
+    using System.Web;
     using System.Web.Http;
-    using System.Web.Mvc;
+    using Common.Constants;
 
-    public class WebApiApplication : System.Web.HttpApplication
+    public class WebApiApplication : HttpApplication
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
+            DatabaseConfig.Initialize();
+            AutoMapperConfig.RegisterMappings(Assembly.Load(Assemblies.WebApi));
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }

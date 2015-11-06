@@ -2,7 +2,7 @@
 {
     public class Assemblies
     {
-        public const string WebApi = "TownSystem.Api";
+        public const string WebApi = "TownSystem.Services";
         public const string DataServices = "TownSystem.Services.Data";
 
     }
