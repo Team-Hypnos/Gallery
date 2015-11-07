@@ -5,7 +5,6 @@
 
 body {
     background-image: url(../content/town-night-blur.jpg);
-
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a {
@@ -40,10 +39,6 @@ a:hover, .navbar-default .navbar-nav > .active > a:focus {
 
 .navbar-fixed-bottom, .navbar-fixed-top, .navbar-static-top {
     background-color: snow;
-}
-
-div.navbar.navbar-default {
-    margin-bottom: -1px;
 }
 
 .footer-text-style {
@@ -96,7 +91,7 @@ div.navbar.navbar-default {
 .item {
     position: relative;
     width: 100%;
-    height: 41em;
+    height: 44em;
 }
 
 .form-signin-heading {
@@ -135,4 +130,127 @@ div.navbar.navbar-default {
     border-right: 1px solid #dfdfe0;
 }
 
+.album {
+    width: 200px;
+    height: 120px;
+    list-style: none;
+    margin: 15px;
+    margin-bottom: 25px;
+}
 
+ul {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+ul li img {
+    cursor: pointer;
+    width: 200px;
+    height: 120px;
+    margin-left: -15px;
+    border: 5px solid white;
+}
+
+ul li img:hover {
+    border: 5px solid gold;
+}
+
+#album-container {
+    margin-top: 65px;
+    margin-bottom: 65px;
+}
+
+.album-name {
+    font-size: 16px;
+    color: white;
+    margin-top: 2px;
+    margin-left: -15px;
+    margin-right: 15px;
+}
+
+.album-size {
+    color: white;
+    margin-top: 3px;
+    border-radius: 150px;
+    background-color: dodgerblue;
+    width: 30px;
+    padding: 2px;
+    text-align: center;
+}
+
+.album-info {
+    margin-bottom: 25px !important;
+}
+
+#town-name {
+    margin-left: 5px;
+    color: snow;
+    font-size: 35px;
+}
+
+#go-back {
+    font-size: 22px;
+    color: dodgerblue;
+    text-decoration: none;
+    text-align: right;
+    margin-left: 65px;
+    margin-top: 15px;
+}
+
+#go-back:hover {
+    color: dodgerblue;
+}
+
+#posts-header {
+    vertical-align: middle;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.post {
+    width: 200px;
+    height: 120px;
+    list-style: none;
+    margin: 15px;
+    margin-bottom: 25px;
+}
+
+.post-title {
+    font-size: 16px;
+    color: white;
+    margin-top: 2px;
+    margin-left: -15px;
+}
+
+.post-likes {
+    color: white;
+    margin-top: 2px;
+    margin-left: 25px;
+    font-size: 18px;
+}
+
+.glyphicon-thumbs-up{
+    color: dodgerblue;
+    font-size: 20px;
+    margin-top: 2px;
+    margin-left: -15px;
+}
+
+.modal-image {
+    position: fixed;
+}
+
+#lightbox .modal-content {
+    display: inline-block;
+    text-align: center;
+    left: -12%;
+}
+
+.modal-body > img {
+    width: 800px;
+    height: 500px;
+}
+
+.vote {
+    cursor: pointer;
+}

@@ -1,0 +1,12 @@
+<div id="album-container" class="container" ng-controller="TownsController">
+    <h1 id="town-name" class="row">Albums</h1>
+    <ul class="row">
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4 album" ng-repeat="album in albums" ng-click="openAlbum(album.name)">
+            <img src="{{ album.picture }}"/>
+            <p class="row">
+                <span class="col-md-10 album-name">{{ album.name }}</span>
+                <span class="col-md-2 album-size">{{ album.size }}</span>
+            </p>
+        </li>
+    </ul>
+</div>

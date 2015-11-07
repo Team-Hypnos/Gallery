@@ -1,0 +1,77 @@
+<div id="album-container" class="container" ng-controller="PostsController">
+    <div  id="posts-header" class="row">
+        <span id="town-name" class="col-md-8">{{ townName }}</span>
+        <a href="#/towns" id="go-back" class="col-md-3">Go Back</a>
+    </div>
+    <ul id="album-posts" class="row">
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4 post" data-toggle="modal" data-target="#lightbox"
+            ng-repeat="post in posts">
+            <img src="{{ post.picture }}" name="post-img"/>
+
+            <p class="row">
+                <span class="col-md-8 post-title">{{ post.title }}</span>
+                <span class="col-md-2 post-likes vote" ng-click="likePost()">{{ like }}</span>
+                <span class="col-md-2 glyphicon glyphicon-thumbs-up vote" ng-click="likePost()"></span>
+            </p>
+        </li>
+    </ul>
+</div>
+
+<!-- Modal image window -->
+<div id="modal-container"></div>
+
+<script>
+    $(document).ready(function () {
+        var $lightbox = $('#lightbox');
+
+        $('#album-posts').on('click', function (event) {
+            if (event.target.name === 'post-img') {
+                $('#lightbox').remove();
+
+                var $img = $(event.target),
+                        src = $img.attr('src'),
+                        css = {
+                            'maxWidth': $(window).width() - 100,
+                            'maxHeight': $(window).height() - 100
+                        };
+
+                var lightbox = $('<div/>')
+                        .attr('id', 'lightbox')
+                        .attr('class', 'modal face')
+                        .attr('tabindex', '1')
+                        .attr('role', 'dialog')
+                        .attr('aria-hidden', 'true');
+
+                var modalDialog = $('<div/>')
+                        .addClass('modal-dialog');
+
+                var modalContent = $('<div/>')
+                        .addClass('modal-content');
+
+                var modalBody = $('<div/>')
+                        .addClass('modal-body');
+
+                var img = $('<img/>')
+                        .attr('src', src)
+                        .css(css);
+
+                modalBody.append(img);
+                modalContent.append(modalBody);
+                modalDialog.append(modalContent);
+                lightbox.append(modalDialog);
+                $('#main-container #modal-container').append(lightbox);
+
+
+                $lightbox.on('shown.bs.modal', function () {
+                    var $img = $lightbox.find('img');
+
+                    $lightbox.find('.modal-dialog').css({'width': $img.width()});
+                });
+
+            } else {
+                $lightbox.html('');
+                $('#lightbox').remove();
+            }
+        });
+    });
+</script>
