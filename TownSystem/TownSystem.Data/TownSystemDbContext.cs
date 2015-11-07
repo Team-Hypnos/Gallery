@@ -1,8 +1,8 @@
-﻿namespace TownSystem.Data
+﻿
+namespace TownSystem.Data
 {
     using System.Data.Entity;
-
-    using Contracts;
+    using TownSystem.Data.Contracts;
     using Models;
 
     public class TownSystemDbContext : DbContext, ITownSystemDbContext

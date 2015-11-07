@@ -4,9 +4,10 @@
     using System.Data.Entity;
 
     using Data;
+    using Data.Contracts;
     using Data.Migrations;
     using Models;
-    using Data.Contracts;
+
 
     public class Starup
     {
