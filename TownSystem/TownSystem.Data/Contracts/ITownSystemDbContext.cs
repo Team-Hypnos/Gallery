@@ -1,4 +1,4 @@
-﻿namespace TownSystem.Data
+﻿namespace TownSystem.Data.Contracts
 {
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;

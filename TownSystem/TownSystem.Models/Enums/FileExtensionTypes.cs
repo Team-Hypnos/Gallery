@@ -1,4 +1,4 @@
-﻿namespace TownSystem.Models
+﻿namespace TownSystem.Models.Enums
 {
     public enum FileExtensionTypes
     {
