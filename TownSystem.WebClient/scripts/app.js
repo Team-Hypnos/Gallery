@@ -8,6 +8,7 @@ var galleryApp = angular.module('galleryApp', ['ngRoute', 'ngResource', 'ngSanit
             .when('/signup', {controller: 'SignUpController', templateUrl: 'views/sign-up.html'})
             .when('/towns', {controller: 'TownsController', templateUrl: 'views/albums.html'})
             .when('/towns/:name/', {controller: 'PostsController', templateUrl: 'views/all-posts.html', })
+            .when('/towns/:name/:id', {controller: 'OpenedPostController', templateUrl: 'views/opened-post.html'})
             .otherwise({redirectTo: '/home'});
 
         // TODO: define all routes and templates

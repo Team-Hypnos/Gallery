@@ -1,4 +1,4 @@
-<div id="album-container" class="container" ng-controller="PostsController">
+<div id="album-container" class="container" ng-controller="PostsController" ng-cloak>
     <div  id="posts-header" class="row">
         <span id="town-name" class="col-md-8">{{ townName }}</span>
         <a href="#/towns" id="go-back" class="col-md-3">Go Back</a>
@@ -9,7 +9,7 @@
             <img src="{{ post.picture }}" name="post-img"/>
 
             <p class="row">
-                <span class="col-md-8 post-title">{{ post.title }}</span>
+                <span class="col-md-8 post-title" ng-click="openPost(post.id, post.title)">{{ post.title }}</span>
                 <span class="col-md-2 post-likes vote" ng-click="likePost()">{{ like }}</span>
                 <span class="col-md-2 glyphicon glyphicon-thumbs-up vote" ng-click="likePost()"></span>
             </p>

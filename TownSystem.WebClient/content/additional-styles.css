@@ -229,7 +229,7 @@ ul li img:hover {
     font-size: 18px;
 }
 
-.glyphicon-thumbs-up{
+.glyphicon-thumbs-up {
     color: dodgerblue;
     font-size: 20px;
     margin-top: 2px;
@@ -253,4 +253,62 @@ ul li img:hover {
 
 .vote {
     cursor: pointer;
+}
+
+#post-picture {
+    width: inherit;
+    height: inherit;
+    border: 3px solid gold;
+    margin-bottom: 15px;
+}
+
+#user-post {
+    margin-top: 75px;
+    border: 1px solid #DDDDDD;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+}
+
+#user-post > .row:first-child {
+    margin-bottom: -5px;
+}
+
+#current-post-title {
+    font-family: sans-serif;
+    font-size: 35px;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+#current-post-author {
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+#current-post-description {
+    background-color: #F5F5F5;
+    border-top: 2px solid #DDDDDD;
+    border-right: 2px solid #DDDDDD;
+    border-bottom-left-radius: 5px;
+    font-family: sans-serif;
+    height: 65px;
+    font-size: 15px;
+}
+
+#current-post-likes {
+    color: dodgerblue;
+    font-family: sans-serif;
+    padding-top: 7px;
+    border-top: 2px solid #DDDDDD;
+    font-size: 20px;
+}
+
+#register-user-container {
+    margin-top: 70px;
+}
+
+#login-user-container {
+    margin-top: 70px;
 }
