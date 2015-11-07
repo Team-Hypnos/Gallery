@@ -11,7 +11,7 @@
         {
             this.Id = Guid.NewGuid();
             this.Posts = new HashSet<Post>();
-            this.Pictures = new HashSet<Picture>();
+            //this.Pictures = new HashSet<Picture>();
             this.Categories = new HashSet<Category>();
         }
 
@@ -24,7 +24,11 @@
 
         public virtual ICollection<Post> Posts { get; set; }
 
-        public ICollection<Picture> Pictures { get; set; }
+        public virtual int? PictureId { get; set; }
+
+        public virtual Picture Picture { get; set; }
+
+        //public ICollection<Picture> Pictures { get; set; }
 
         public ICollection<Category> Categories { get; set; }
     }
