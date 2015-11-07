@@ -1,6 +1,6 @@
 'use strict';
 
-galleryApp.controller('PostsController', function PostsController($scope) {
+galleryApp.controller('PostsController', function PostsController($scope, $location) {
     $scope.posts = [
         {
             picture: "http://static1.squarespace.com/static/54a674c9e4b0375c08453705/54d3e872e4b06da65e8a6a1a/54d93539e4b0853cc2aff163/1442931501486/Kyustendil_night.jpg?format=1500w",
@@ -80,5 +80,9 @@ galleryApp.controller('PostsController', function PostsController($scope) {
             $scope.like += 1;
             $scope.canVote = false;
         }
-    }
+    };
+
+    $scope.openPost = function (id, townName) {
+        $location.path('/towns/' + townName.toLowerCase() + '/' + (100 + id));
+    };
 });

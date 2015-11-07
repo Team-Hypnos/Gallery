@@ -1,10 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="container" ng-controller="OpenedPostController" ng-cloak>
+    <div id="comments-container" class="row">
+        <div id="user-post" class="col-md-8 col-md-offset-2">
+            <div class="row">
+                <div id="current-post-title" class="col-md-7 text-left">{{ currentPost.title }}</div>
+                <div id="current-post-author" class="col-md-4 text-right">{{ currentPost.user }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <img id="post-picture" src="{{ currentPost.picture }}"/>
+                </div>
+            </div>
+            <div class="row inside">
+                <div id="current-post-description" class="col-md-11 text-left">
+                    {{ currentPost.description }}
+                </div>
+                <div id="current-post-likes" class="col-md-1 text-center">
+                    {{ currentPost.likes }} likes
+                </div>
+            </div>
+        </div>
+        <div id="add-comment-box" class="col-md-8 col-md-offset-2">
+            <div class="widget-area no-padding blank">
+                <div class="status-upload">
+                    <form>
+                        <textarea id="comment-textarea" placeholder="Say something :)" ></textarea>
+                        <button type="submit" class="btn btn-success green">Add Comment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <h2 class="page-header">Comments</h2>
+            <section class="comment-list">
+                <article class="row" ng-repeat="comment in currentPost.comments">
+                    <div class="col-md-2 col-sm-2 hidden-xs">
+                        <figure class="thumbnail">
+                            <img class="img-responsive"
+                                 src="http://files.parsetfss.com/1ad00c84-7830-427f-ac8d-d4459361b5ce/tfss-905a97f8-9505-4ab1-aabc-5c3aef44cd35-avartar.jpeg" />
+                            <figcaption class="text-center">{{ comment.user }}</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-10 col-sm-10">
+                        <div class="panel panel-default arrow left">
+                            <div class="panel-body">
+                                <header class="text-left">
+                                    <div class="comment-user"><i class="fa fa-user"></i>  {{ comment.user }}</div>
+                                    <time class="comment-date" datetime="{{ comment.timePosted }}"><i class="fa fa-clock-o"></i> {{ comment.timePosted }}</time>
+                                </header>
+                                <div class="comment-post">
+                                    <p>
+                                        {{ comment.content }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+</div>
