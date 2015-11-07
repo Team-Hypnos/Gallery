@@ -2,6 +2,7 @@
 {
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
     using System.Linq;
 
     public class EfGenericRepository<T> : IRepository<T> where T : class
@@ -33,40 +34,22 @@
 
         public virtual void Add(T entity)
         {
-            var entry = this.Context.Entry(entity);
-            if (entry.State != EntityState.Detached)
-            {
-                entry.State = EntityState.Added;
-            }
-            else
-            {
-                this.DbSet.Add(entity);
-            }
+            var entry = this.AttachIfDetached(entity);
+            entry.State = EntityState.Added;
+            this.DbSet.Add(entity);
         }
 
         public virtual void Update(T entity)
         {
-            var entry = this.Context.Entry(entity);
-            if (entry.State == EntityState.Detached)
-            {
-                this.DbSet.Attach(entity);
-            }
-
+            var entry = this.AttachIfDetached(entity);
             entry.State = EntityState.Modified;
         }
 
         public virtual void Delete(T entity)
         {
-            var entry = this.Context.Entry(entity);
-            if (entry.State != EntityState.Deleted)
-            {
-                entry.State = EntityState.Deleted;
-            }
-            else
-            {
-                this.DbSet.Attach(entity);
-                this.DbSet.Remove(entity);
-            }
+            var entry = this.AttachIfDetached(entity);
+            entry.State = EntityState.Deleted;
+            this.DbSet.Remove(entity);
         }
 
         public virtual void Delete(object id)
@@ -86,7 +69,7 @@
 
         public virtual void Detach(T entity)
         {
-            var entry = this.Context.Entry(entity);
+            var entry = this.AttachIfDetached(entity);
             entry.State = EntityState.Detached;
         }
 
@@ -98,6 +81,17 @@
         public void Dispose()
         {
             this.Context.Dispose();
+        }
+
+        private DbEntityEntry AttachIfDetached(T entity)
+        {
+            var entry = this.Context.Entry(entity);
+            if (entry.State == EntityState.Detached)
+            {
+                this.DbSet.Attach(entity);
+            }
+
+            return entry;
         }
     }
 }
