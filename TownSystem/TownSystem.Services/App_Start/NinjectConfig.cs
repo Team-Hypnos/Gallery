@@ -7,12 +7,13 @@ namespace TownSystem.Services
     using System.Web;
 
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
     using Ninject;
     using Ninject.Extensions.Conventions;
     using Ninject.Web.Common;
+
     using Common.Constants;
     using Data;
+    using Data.Contracts;
     using Infrastructure;
 
     public static class NinjectConfig
@@ -73,7 +74,6 @@ namespace TownSystem.Services
             kernel.Bind(b => b.From(Assemblies.DataServices)
             .SelectAllClasses()
             .BindDefaultInterface());
-
         }
     }
 }

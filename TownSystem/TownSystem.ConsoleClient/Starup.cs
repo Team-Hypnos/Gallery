@@ -2,9 +2,11 @@
 {
     using System;
     using System.Data.Entity;
+
     using Data;
     using Data.Migrations;
     using Models;
+    using Data.Contracts;
 
     public class Starup
     {

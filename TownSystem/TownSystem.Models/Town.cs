@@ -1,6 +1,5 @@
 ﻿namespace TownSystem.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     
@@ -9,12 +8,11 @@
     {
         public Town()
         {
-            this.Id = Guid.NewGuid();
             this.Posts = new HashSet<Post>();
             this.Categories = new HashSet<Category>();
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MinLength(3)]

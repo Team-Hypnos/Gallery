@@ -1,6 +1,5 @@
 ﻿namespace TownSystem.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
@@ -26,7 +25,7 @@
 
         public bool IsDeleted { get; set; }
 
-        public virtual Guid TownId { get; set; }
+        public virtual int TownId { get; set; }
 
         public virtual Town Town { get; set; }
 

@@ -47,9 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
-    <Compile Include="CategoryTypes.cs" />
+    <Compile Include="Enums\CategoryTypes.cs" />
     <Compile Include="Comment.cs" />
-    <Compile Include="FileExtensionTypes.cs" />
+    <Compile Include="Enums\FileExtensionTypes.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Town.cs" />

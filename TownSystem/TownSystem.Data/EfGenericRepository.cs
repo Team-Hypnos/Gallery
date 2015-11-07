@@ -5,6 +5,8 @@
     using System.Data.Entity.Infrastructure;
     using System.Linq;
 
+    using Contracts;
+
     public class EfGenericRepository<T> : IRepository<T> where T : class
     {
         public EfGenericRepository(ITownSystemDbContext context)
