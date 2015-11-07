@@ -8,7 +8,7 @@
         public User()
         {
             this.Posts = new HashSet<Post>();
-            this.Comments = new HashSet<Comment>();
+            //this.Comments = new HashSet<Comment>();
         }
         public int Id { get; set; }
 
@@ -32,6 +32,6 @@
 
         public virtual ICollection<Post> Posts { get; set; }
 
-        public virtual ICollection<Comment> Comments { get; set; }
+        //public virtual ICollection<Comment> Comments { get; set; }
     }
 }

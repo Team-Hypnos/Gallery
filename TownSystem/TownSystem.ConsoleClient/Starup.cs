@@ -11,7 +11,7 @@
         public static void Main()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<TownSystemDbContext, Configuration>());
-            var data = new EfGenericRepository<Town>(new TownSystemDbContext());
+            IRepository<Town> data = new EfGenericRepository<Town>(new TownSystemDbContext());
 
             var town = new Town
             {
