@@ -10,6 +10,7 @@ using System.ComponentModel.DataAnnotations;
         public Picture()
         {
             this.Towns = new HashSet<Town>();
+            this.Users = new HashSet<User>();
         }
         public int Id { get; set; }
 
@@ -24,10 +25,8 @@ using System.ComponentModel.DataAnnotations;
         [MaxLength(100)]
         public string OriginalFileName { get; set; }
 
-        //public virtual Guid? TownId { get; set; }
-
-        //public virtual Town Town { get; set; }
-
         public ICollection<Town> Towns { get; set; }
+
+        public ICollection<User> Users { get; set; }
     }
 }
