@@ -1,10 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<div class="container" ng-click="AddPostController" ng-cloak>
+    <div id="upload-file" class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1 id="new-post-title" class="text-center">New Post</h1>
+        </div>
+        <div class="col-md-12 col-md-offset-1">
+            <div class="tab-pane active">
+                <form id="postForm" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Title</label>
+                        <div class="col-lg-5">
+                            <input type="text" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Description</label>
+                        <div class="col-lg-5">
+                            <textarea id="textarea-description" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Choose Town</label>
+                        <div class="col-lg-5">
+                            <select class="form-control" id="townChoose" name="townChoose">
+                                <option value="town0">Town</option>
+                                <option value="town1">Sofia</option>
+                                <option value="town2">Varna</option>
+                                <option value="town3">Plovdiv</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Choose Category</label>
+                        <div class="col-lg-5">
+                            <select class="form-control" id="categoryChoose" name="categoryChoose">
+                                <option value="town0">Category</option>
+                                <option value="town1">Nature</option>
+                                <option value="town2">Historical Monuments</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>Upload picture</strong></div>
+                <div class="panel-body">
+                    <div class="input-group image-preview">
+                        <input placeholder="" type="text" class="form-control image-preview-filename"
+                               disabled="disabled">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                <span class="glyphicon glyphicon-remove"></span> Clear
+                            </button>
+                            <div class="btn image-preview-input">
+                                <span class="glyphicon glyphicon-folder-open"></span>
+                                <span class="image-preview-input-title">Browse</span>
+                                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+                            </div>
+                            <button type="button" class="btn btn-labeled image-preview-input">
+                                <span class="btn-label upload-icon"><i class="glyphicon glyphicon-upload"></i> </span>
+                                <span class="image-preview-input-title">Upload</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-</body>
-</html>
