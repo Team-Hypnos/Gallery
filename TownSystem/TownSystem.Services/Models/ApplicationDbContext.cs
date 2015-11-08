@@ -5,7 +5,7 @@ namespace TownSystem.Services.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("TownSystem", throwIfV1Schema: false)
         {
         }
         
