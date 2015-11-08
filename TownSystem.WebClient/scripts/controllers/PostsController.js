@@ -72,7 +72,6 @@ galleryApp.controller('PostsController', function PostsController($scope, $locat
     $scope.canVote = true;
 
     $scope.likePost = function () {
-        debugger;
         if (!$scope.canVote) {
             $scope.like -= 1;
             $scope.canVote = true;

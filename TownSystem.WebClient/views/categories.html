@@ -1,22 +1,35 @@
-<div id="categories-holder" ng-controller="CategoriesController">
-    <div id="categories-container" class="container" ng-cloak ng-repeat="element in categories">
-        <div  id="categories-header" class="row">
-            <span class="col-md-12 text-center category-name">{{ element[$index].category }}</span>
-        </div>
-        <hr class="style-two"/>
-        <ul id="category-posts" class="row">
-            <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4 category-post-holder" data-toggle="modal" data-target="#lightbox"
-                ng-repeat="el in element">
-                <span class="col-md-12 name-town">{{ el.town }}</span>
-                <img src="{{ el.picture }}" ng-click="openPost(el.id, el.town)"/>
-                <p class="row">
-                    <span class="col-md-8 glyphicon glyphicon-zoom-in text-left" name="glyphicon-zoom-in" imageUrl="{{ el.picture }}"></span>
-                    <span class="col-md-2 post-likes vote" ng-click="likePost()">{{ el.likes }}</span>
-                    <span class="col-md-2 glyphicon glyphicon-thumbs-up vote" ng-click="likePost()"></span>
-                </p>
-            </li>
-        </ul>
+<div id="categories-container" class="container" ng-cloak ng-controller="CategoriesController">
+    <!-- Nature -->
+    <div  class="row categories-header">
+        <span class="col-md-12 text-center category-name">Nature</span>
     </div>
+    <hr class="style-two"/>
+    <ul id="1" class="row category-posts">
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4 category-post-holder" data-toggle="modal" data-target="#lightbox"
+            ng-repeat="el in categories['nature']">
+            <span class="col-md-12 name-town">{{ el.town }}</span>
+            <img src="{{ el.picture }}" ng-click="openPost(el.id, el.town)"/>
+            <a class="col-md-8 glyphicon glyphicon-zoom-in text-left icon-left" name="zoom-icon1" id="{{ el.picture }}"></a>
+            <a class="col-md-2 post-likes vote" ng-click="voteForPost('nature', el.id)">{{ el.likes }}</a>
+            <a class="col-md-2 glyphicon glyphicon-thumbs-up vote" ng-click="voteForPost('nature', el.id)"></a>
+        </li>
+    </ul>
+
+    <!-- Historical monuments -->
+    <div  class="row categories-header">
+        <span class="col-md-12 text-center category-name">Historical monuments</span>
+    </div>
+    <hr class="style-two"/>
+    <ul id="2" class="row category-posts">
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4 category-post-holder" data-toggle="modal" data-target="#lightbox"
+            ng-repeat="el in categories['historicalMonuments']">
+            <span class="col-md-12 name-town">{{ el.town }}</span>
+            <img src="{{ el.picture }}" ng-click="openPost(el.id, el.town)"/>
+            <a class="col-md-8 glyphicon glyphicon-zoom-in text-left icon-left" name="zoom-icon2" id="{{ el.picture }}"></a>
+            <a class="col-md-2 post-likes vote" ng-click="voteForPost('historicalMonuments', el.id)">{{ el.likes }}</a>
+            <a class="col-md-2 glyphicon glyphicon-thumbs-up vote" ng-click="voteForPost('historicalMonuments', el.id)"></a>
+        </li>
+    </ul>
 </div>
 
 <!-- Modal image window -->
@@ -26,57 +39,55 @@
     $(document).ready(function () {
         var $lightbox = $('#lightbox');
 
-        console.log($('#categories-container').children());
+        $('#categories-container').on('click', function (event) {
+                var attributeName = event.target.name.substring(0, 9);
+                if (attributeName === 'zoom-icon') {
+                    $('#lightbox').remove();
 
-        $('#categories-holder').on('click', function (event) {
-            alert(event.target.name);
-            if (event.target.name === 'glyphicon-zoom-in') {
-                $('#lightbox').remove();
+                    var $img = $(event.target),
+                            src = $img.attr('id'),
+                            css = {
+                                'maxWidth': $(window).width() - 100,
+                                'maxHeight': $(window).height() - 100
+                            };
 
-                var $img = $(event['imageUrl']),
-                        src = $img.attr('imageUrl'),
-                        css = {
-                            'maxWidth': $(window).width() - 100,
-                            'maxHeight': $(window).height() - 100
-                        };
+                    var lightbox = $('<div/>')
+                            .attr('id', 'lightbox')
+                            .attr('class', 'modal face')
+                            .attr('tabindex', '1')
+                            .attr('role', 'dialog')
+                            .attr('aria-hidden', 'true');
 
-                var lightbox = $('<div/>')
-                        .attr('id', 'lightbox')
-                        .attr('class', 'modal face')
-                        .attr('tabindex', '1')
-                        .attr('role', 'dialog')
-                        .attr('aria-hidden', 'true');
+                    var modalDialog = $('<div/>')
+                            .addClass('modal-dialog');
 
-                var modalDialog = $('<div/>')
-                        .addClass('modal-dialog');
+                    var modalContent = $('<div/>')
+                            .addClass('modal-content');
 
-                var modalContent = $('<div/>')
-                        .addClass('modal-content');
+                    var modalBody = $('<div/>')
+                            .addClass('modal-body');
 
-                var modalBody = $('<div/>')
-                        .addClass('modal-body');
+                    var img = $('<img/>')
+                            .attr('src', src)
+                            .css(css);
 
-                var img = $('<img/>')
-                        .attr('src', src)
-                        .css(css);
-
-                modalBody.append(img);
-                modalContent.append(modalBody);
-                modalDialog.append(modalContent);
-                lightbox.append(modalDialog);
-                $('#main-container #modal-container').append(lightbox);
+                    modalBody.append(img);
+                    modalContent.append(modalBody);
+                    modalDialog.append(modalContent);
+                    lightbox.append(modalDialog);
+                    $('#main-container #modal-container').append(lightbox);
 
 
-                $lightbox.on('shown.bs.modal', function () {
-                    var $img = $lightbox.find('img');
+                    $lightbox.on('shown.bs.modal', function () {
+                        var $img = $lightbox.find('img');
 
-                    $lightbox.find('.modal-dialog').css({'width': $img.width()});
-                });
+                        $lightbox.find('.modal-dialog').css({'width': $img.width()});
+                    });
 
-            } else {
-                $lightbox.html('');
-                $('#lightbox').remove();
-            }
-        });
+                } else {
+                    $lightbox.html('');
+                    $('#lightbox').remove();
+                }
+            });
     });
 </script>

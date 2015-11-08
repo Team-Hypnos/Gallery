@@ -226,6 +226,7 @@ ul li img:hover {
     color: white;
     margin-top: 2px;
     margin-left: 15px;
+    margin-right: 3px;
     font-size: 18px;
 }
 
@@ -357,6 +358,27 @@ hr.style-two {
     color: white;
 }
 
-#categories-container:last-child {
+#categories-container {
     margin-bottom: 120px;
+}
+
+.icon-left {
+    margin-left: -28px;
+    margin-right: 16px;
+}
+
+.glyphicon-zoom-in:hover {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.vote:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.glyphicon-thumbs-up:hover{
+    color: dodgerblue;
+    text-decoration: none;
 }
