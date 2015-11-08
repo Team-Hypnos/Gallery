@@ -14,9 +14,25 @@ namespace TownSystem.Services.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
+        //[DataType(DataType.Password)]
+        //[Display(Name = "Confirm password")]
+        //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        //public string ConfirmPassword { get; set; }
+
+        [MinLength(4)]
+        [MaxLength(50)]
+        [Display(Name = "First name")]
+        public string FirstName { get; set; }
+
+        [MinLength(4)]
+        [MaxLength(50)]
+        [Display(Name = "Last name")]
+        public string LastName { get; set; }
+
+        //[Required]
+        //[MinLength(4)]
+        //[MaxLength(50)]
+        //[Display(Name = "Username")]
+        //public string Username { get; set; }
     }
 }
