@@ -1,12 +1,12 @@
 'use strict';
 
-galleryApp.controller('MainController', function MainController($scope, author, copyright) {
+galleryApp.controller('MainController', function MainController($scope, author, copyright, $location) {
     $scope.author = author;
     $scope.copyright = copyright;
 
     $scope.signOut = function () {
         $scope.isLoggedIn = false;
-        $scope.path('/home');
+        $location.path('/home');
         localStorage.clear();
     };
 

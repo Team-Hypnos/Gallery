@@ -4,12 +4,12 @@ galleryApp.controller('TownsController', function TownsController($scope, $locat
     $scope.albums = [
         {
             picture: "http://static1.squarespace.com/static/54a674c9e4b0375c08453705/54d3e872e4b06da65e8a6a1a/54d93539e4b0853cc2aff163/1442931501486/Kyustendil_night.jpg?format=1500w",
-            name: 'Kjustendil',
+            name: 'Blagoevgrad',
             size: 13
         },
         {
             picture: "http://birdsphotographer.com/wp-content/uploads/2014/02/sofia-izgrev-sunrise-landscape-peizaj-wwwBirdsPhotographerCom__Nikolay-Staykov-8798.jpg",
-            name: 'Sofia',
+            name: 'Stara Zagora',
             size: 77
         },
         {

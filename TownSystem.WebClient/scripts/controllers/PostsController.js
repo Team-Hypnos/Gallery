@@ -83,6 +83,7 @@ galleryApp.controller('PostsController', function PostsController($scope, $locat
     };
 
     $scope.openPost = function (id, townName) {
-        $location.path('/towns/' + townName.toLowerCase() + '/' + (100 + id));
+        var town = townName.toLowerCase().replace(' ', '');
+        $location.path('/towns/' + town + '/' + (100 + id));
     };
 });

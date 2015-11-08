@@ -7,9 +7,10 @@ var galleryApp = angular.module('galleryApp', ['ngRoute', 'ngResource', 'ngSanit
             .when('/signin', {controller: 'SignInController', templateUrl: 'views/sign-in.html'})
             .when('/signup', {controller: 'SignUpController', templateUrl: 'views/sign-up.html'})
             .when('/towns', {controller: 'TownsController', templateUrl: 'views/albums.html'})
-            .when('/towns/:name/', {controller: 'PostsController', templateUrl: 'views/all-posts.html', })
+            .when('/towns/:name/', {controller: 'PostsController', templateUrl: 'views/all-posts.html' })
             .when('/towns/:name/:id', {controller: 'OpenedPostController', templateUrl: 'views/opened-post.html'})
             .when('/post', {controller: 'AddPostController', templateUrl: 'views/new-post.html'})
+            .when('/categories', {controller: 'CategoriesController', templateUrl: 'views/categories.html'})
             .otherwise({redirectTo: '/home'});
 
         // TODO: define all routes and templates
