@@ -224,9 +224,7 @@
     <Compile Include="Infrastructure\ObjectFactory.cs" />
     <Compile Include="Models\AccountBindingModels\AddExternalLoginBindingModel.cs" />
     <Compile Include="Models\AccountViewModels\ExternalLoginViewModel.cs" />
-    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\AccountBindingModels\ChangePasswordBindingModel.cs" />
-    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\AccountViewModels\ManageInfoViewModel.cs" />
     <Compile Include="Models\AccountBindingModels\RegisterBindingModel.cs" />
     <Compile Include="Models\AccountBindingModels\RegisterExternalBindingModel.cs" />
@@ -257,6 +255,10 @@
     <ProjectReference Include="..\TownSystem.Data\TownSystem.Data.csproj">
       <Project>{f5e641a1-55b0-4faf-bbd2-ec98d20572e7}</Project>
       <Name>TownSystem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TownSystem.Models\TownSystem.Models.csproj">
+      <Project>{78fd5502-e904-4ba0-9dac-d4c2d0a0d223}</Project>
+      <Name>TownSystem.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,7 @@
     using Microsoft.Owin.Security.Cookies;
     using Microsoft.Owin.Security.OAuth;
     using Models;
+    using TownSystem.Models;
 
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
@@ -28,7 +29,7 @@
         {
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
-            ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
+            User user = await userManager.FindAsync(context.UserName, context.Password);
 
             if (user == null)
             {

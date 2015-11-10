@@ -14,8 +14,6 @@
 
         IDbSet<Category> Categories { get; set; }
 
-        IDbSet<User> Users { get; set; }
-
         IDbSet<Comment> Comments { get; set; }
 
         DbSet<TEntity> Set<TEntity>() where TEntity : class;

@@ -17,6 +17,7 @@
     using Models;
     using Providers;
     using Results;
+    using TownSystem.Models;
 
     [Authorize]
     [RoutePrefix("api/Account")]
@@ -277,7 +278,7 @@
                 return new ChallengeResult(provider, this);
             }
 
-            ApplicationUser user = await this.UserManager.FindAsync(
+            User user = await this.UserManager.FindAsync(
                 new UserLoginInfo(
                     externalLogin.LoginProvider,
                     externalLogin.ProviderKey));
@@ -361,7 +362,7 @@
                 return this.BadRequest(this.ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
+            var user = new User() { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
 
             IdentityResult result = await this.UserManager.CreateAsync(user, model.Password);
 
@@ -390,7 +391,7 @@
                 return this.InternalServerError();
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new User() { UserName = model.Email, Email = model.Email };
 
             IdentityResult result = await this.UserManager.CreateAsync(user);
             if (!result.Succeeded)

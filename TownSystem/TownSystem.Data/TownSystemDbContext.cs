@@ -1,16 +1,15 @@
-﻿
-namespace TownSystem.Data
+﻿namespace TownSystem.Data
 {
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System.Data.Entity;
-    using TownSystem.Data.Contracts;
+    using Contracts;
     using Models;
 
-    public class TownSystemDbContext : DbContext, ITownSystemDbContext
+    public class TownSystemDbContext : IdentityDbContext<User>, ITownSystemDbContext 
     {
         public TownSystemDbContext()
-            : base("TownSystem")
+            : base("TownSystem", throwIfV1Schema: false)
         {
-
         }
 
         public virtual IDbSet<Town> Towns { get; set; }
@@ -20,8 +19,6 @@ namespace TownSystem.Data
         public virtual IDbSet<Picture> Pictures { get; set; }
 
         public virtual IDbSet<Category> Categories { get; set; }
-
-        public virtual IDbSet<User> Users { get; set; }
 
         public virtual IDbSet<Comment> Comments { get; set; }
 
