@@ -12,9 +12,9 @@ namespace TownSystem.Services
     using Ninject.Web.Common;
 
     using Common.Constants;
-    using Data;
-    using Data.Contracts;
     using Infrastructure;
+    using TownSystem.Data.Contracts;
+    using TownSystem.Data;
 
     public static class NinjectConfig
     {

@@ -7,7 +7,7 @@
     using Microsoft.Owin.Security.OAuth;
     using Owin;
     using Providers;
-    using Data;
+    using TownSystem.Data;
 
     public partial class Startup
     {

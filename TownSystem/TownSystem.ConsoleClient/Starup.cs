@@ -14,15 +14,15 @@
         public static void Main()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<TownSystemDbContext, Configuration>());
-            IRepository<Town> data = new EfGenericRepository<Town>(new TownSystemDbContext());
+            IRepository<Category> data = new EfGenericRepository<Category>(new TownSystemDbContext());
 
-            var town = new Town
+            var category = new Category
             {
-                Name = "Sofia"
+                Name = "Seasight"
             };
 
             Console.WriteLine("Testing for adding town");
-            data.Add(town);
+            data.Add(category);
 
             // Deleting
             // var towns = data.All();

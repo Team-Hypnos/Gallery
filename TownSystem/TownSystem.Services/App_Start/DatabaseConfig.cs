@@ -1,8 +1,8 @@
 ﻿namespace TownSystem.Services
 {
     using System.Data.Entity;
-    using Data;
-    using Data.Migrations;
+    using TownSystem.Data;
+    using TownSystem.Data.Migrations;
 
     public class DatabaseConfig
     {

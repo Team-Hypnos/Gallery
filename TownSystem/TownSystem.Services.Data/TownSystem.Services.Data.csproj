@@ -57,10 +57,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriesService.cs" />
+    <Compile Include="Contracts\ICategoriesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Contracts\" />
+    <ProjectReference Include="..\TownSystem.Data\TownSystem.Data.csproj">
+      <Project>{f5e641a1-55b0-4faf-bbd2-ec98d20572e7}</Project>
+      <Name>TownSystem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TownSystem.Models\TownSystem.Models.csproj">
+      <Project>{78fd5502-e904-4ba0-9dac-d4c2d0a0d223}</Project>
+      <Name>TownSystem.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
