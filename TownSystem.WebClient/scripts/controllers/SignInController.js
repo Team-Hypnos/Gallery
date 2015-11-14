@@ -6,8 +6,8 @@ galleryApp.controller('SignInController', function SignInController($scope, $res
             .then(function (data) {
                 $location.path('/home');
                 localStorage.setItem('isLoggedIn', true);
-                localStorage.setItem('access_token', data.acces_token);
-                localStorage.setItem('username', data.username);
+                localStorage.setItem('access_token', data.access_token);
+                localStorage.setItem('username', $scope.username);
             });
     };
 });

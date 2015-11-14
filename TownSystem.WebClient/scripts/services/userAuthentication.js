@@ -42,9 +42,10 @@ galleryApp.factory('userAuthentication', function ($resource, $q, $http) {
         login: function (username, password) {
             var deferred = $q.defer();
 
-            $http.post(remoteUrl + 'Token', {
+            $http.post(remoteUrl + 'api/Account/Login', {
                     username: username,
-                    password: password
+                    password: password,
+                    grant_type: "password"
                 },
                 {
                     transformRequest: function (queryPair) {

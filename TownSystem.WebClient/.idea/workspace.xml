@@ -35,10 +35,30 @@
         <entry file="file://$PROJECT_DIR$/scripts/services/userAuthentication.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="75" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
+              <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
               <folding>
-                <element signature="e#1518#2632#0" expanded="false" />
+                <element signature="e#226#1471#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sign-in.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/sign-in.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="5.8846154">
+              <caret line="0" column="44" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navigation-bar.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/directives/navigation-bar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.57678574">
+              <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SignUpController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SignUpController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/controllers/SignUpController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26109216">
+            <state vertical-scroll-proportion="0.0">
               <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
               <folding />
             </state>
@@ -71,16 +91,6 @@
               <folding>
                 <element signature="n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="additional-styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/additional-styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -138,7 +148,6 @@
         <option value="$PROJECT_DIR$/views/directives/footer.html" />
         <option value="$PROJECT_DIR$/views/directives/modal-window.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/HomeController.js" />
-        <option value="$PROJECT_DIR$/scripts/controllers/SignInController.js" />
         <option value="$PROJECT_DIR$/views/add-post.css" />
         <option value="$PROJECT_DIR$/views/albums.html" />
         <option value="$PROJECT_DIR$/views/all-posts.html" />
@@ -159,7 +168,6 @@
         <option value="$PROJECT_DIR$/views/opened-post.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/OpenedPostController.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/TownsController.js" />
-        <option value="$PROJECT_DIR$/views/directives/navigation-bar.html" />
         <option value="$PROJECT_DIR$/content/upload-file-box.css" />
         <option value="$PROJECT_DIR$/content/additional-styles.css" />
         <option value="$PROJECT_DIR$/views/home.html" />
@@ -168,6 +176,8 @@
         <option value="$PROJECT_DIR$/scripts/controllers/SignUpController.js" />
         <option value="$PROJECT_DIR$/views/sign-up.html" />
         <option value="$PROJECT_DIR$/scripts/services/userAuthentication.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/SignInController.js" />
+        <option value="$PROJECT_DIR$/views/directives/navigation-bar.html" />
       </list>
     </option>
   </component>
@@ -644,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/sign-in.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="44" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/CategoriesController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -719,13 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/directives/navigation-bar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/content/add-comment.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -790,13 +786,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/SignUpController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/services/userAuthentication.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="75" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
           <folding>
-            <element signature="e#1518#2632#0" expanded="false" />
+            <element signature="e#226#1471#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/sign-in.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.8846154">
+          <caret line="0" column="44" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -808,10 +820,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/SignUpController.js">
+    <entry file="file://$PROJECT_DIR$/views/directives/navigation-bar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26109216">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.57678574">
+          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
           <folding />
         </state>
       </provider>
