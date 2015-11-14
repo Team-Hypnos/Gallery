@@ -11,13 +11,13 @@
 
         IQueryable<Comment> PostComments(int? postId);
 
-        IQueryable<Comment> UserComments(string username);
+        IQueryable<Comment> UserComments(string userId);
 
-        int Add(int id, string content, string username, DateTime timePosted);
+        Comment Add(int id, string content, string userId, DateTime timePosted);
 
-        int Edit(int id, string content, string username);
+        Comment Edit(int id, string content, string userId);
 
-        int Delete(int id);
+        void Delete(int id);
 
     }
 }
