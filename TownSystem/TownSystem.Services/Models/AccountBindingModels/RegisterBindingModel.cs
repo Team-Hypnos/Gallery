@@ -19,19 +19,19 @@ namespace TownSystem.Services.Models
         //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         //public string ConfirmPassword { get; set; }
 
-        [MinLength(4)]
-        [MaxLength(50)]
+        [MinLength(4, ErrorMessage ="First Name Lenght must be at least 4 symbols long.")]
+        [MaxLength(50, ErrorMessage = "First Name Lenght must be maximal 50 symbols long.")]
         [Display(Name = "First name")]
         public string FirstName { get; set; }
 
-        [MinLength(4)]
-        [MaxLength(50)]
+        [MinLength(4, ErrorMessage = "Last Name Lenght must be at least 4 symbols long.")]
+        [MaxLength(50, ErrorMessage = "Last Name Lenght must be maximal 50 symbols long.")]
         [Display(Name = "Last name")]
         public string LastName { get; set; }
 
         [Required]
-        [MinLength(4)]
-        [MaxLength(50)]
+        [MinLength(4, ErrorMessage = "Username Lenght must be at least 4 symbols long.")]
+        [MaxLength(50, ErrorMessage = "Username Lenght must be maximal 50 symbols long.")]
         [Display(Name = "Username")]
         public string Username { get; set; }
     }

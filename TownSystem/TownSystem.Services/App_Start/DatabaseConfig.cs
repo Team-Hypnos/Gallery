@@ -4,7 +4,7 @@
     using TownSystem.Data;
     using TownSystem.Data.Migrations;
 
-    public class DatabaseConfig
+    public static class DatabaseConfig
     {
         public static void Initialize()
         {
