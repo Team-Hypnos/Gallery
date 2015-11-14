@@ -23,11 +23,6 @@
         [MinLength(4)]
         [MaxLength(50)]
         public string LastName { get; set; }
-        
-        [Required]
-        [MinLength(6)]
-        [MaxLength(50)]
-        public string Password { get; set; }
 
         public virtual ICollection<Post> Posts { get; set; }
 

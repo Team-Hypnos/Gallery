@@ -29,10 +29,10 @@ namespace TownSystem.Services.Models
         [Display(Name = "Last name")]
         public string LastName { get; set; }
 
-        //[Required]
-        //[MinLength(4)]
-        //[MaxLength(50)]
-        //[Display(Name = "Username")]
-        //public string Username { get; set; }
+        [Required]
+        [MinLength(4)]
+        [MaxLength(50)]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
     }
 }
