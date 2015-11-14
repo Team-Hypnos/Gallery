@@ -1,17 +1,18 @@
 'use strict';
 
 galleryApp.factory('userAuthentication', function ($resource, $q, $http) {
-    var remoteUrl = '';
+    var remoteUrl = 'http://localhost:6299/';
 
     return {
-        register: function (firstName, lastName, username, password) {
+        register: function (firstName, lastName, username, password, email) {
             var deferred = $q.defer();
 
-            $http.post(remoteUrl + 'api/register', {
+            $http.post(remoteUrl + 'api/Account/Register', {
                     FirstName: firstName,
                     LastName: lastName,
                     Username: username,
-                    Password: password
+                    Password: password,
+                    Email: email
                 },
                 {
                     transformRequest: function (queryPair) {

@@ -43,6 +43,7 @@ galleryApp.controller('TownsController', function TownsController($scope, $locat
             size: 25
         }
     ];
+
     $scope.openAlbum = function (townName) {
         $location.path('/towns/' + townName.toLowerCase() + '/');
     };

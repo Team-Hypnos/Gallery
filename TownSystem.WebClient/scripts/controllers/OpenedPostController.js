@@ -30,7 +30,6 @@ galleryApp.controller('OpenedPostController', function OpenedPostController($sco
                 timePosted: '07-11-2015 17:01',
                 user: 'PeshoK',
                 userPicture: 'https://scontent-frt3-1.xx.fbcdn.net/hprofile-xft1/v/t1.0-1/p160x160/11999015_880313535371661_4514415029939989086_n.jpg?oh=04aeeb0a0af03aa0db38faaa18035ffe&oe=56BAB54F'
-
             }
         ],
         likes: 25,
