@@ -10,6 +10,7 @@
     {
         private readonly IRepository<Comment> comments;
        private readonly IUsersService users;
+       
 
         public CommentsService(IRepository<Comment> commentsRepo, IUsersService usersRepo)
         {
@@ -17,7 +18,7 @@
             this.users = usersRepo;
         }
 
-        public Comment Add(int id, string content, string userName)
+        public Comment Add(int? id, string content, string userName)
         {
             if (string.IsNullOrEmpty(content) || string.IsNullOrWhiteSpace(content))
             {
@@ -34,7 +35,7 @@
             var comment = new Comment
             {
                 TimePosted = DateTime.Now,
-                PostId = id,
+                PostId = null,
                 Content = content,
                 UserId = userId
 

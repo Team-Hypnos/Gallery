@@ -42,6 +42,7 @@
         {
 
             var comment = this.comments.Add(model.PostId, model.Content, model.UserName);
+       
 
             var result = this.comments
                 .ById(comment.Id)
