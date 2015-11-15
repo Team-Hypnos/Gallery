@@ -1,14 +1,11 @@
 ﻿namespace TownSystem.Services.Data
 {
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Threading.Tasks;
     using Contracts;
     using Models;
     using TownSystem.Data.Contracts;
 
-    class UsersService : IUsersService
+   public class UsersService : IUsersService
     {
         private readonly IRepository<User> users;
 

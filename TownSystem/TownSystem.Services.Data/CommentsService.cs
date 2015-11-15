@@ -26,7 +26,7 @@
 
             if (string.IsNullOrEmpty(userName) || string.IsNullOrWhiteSpace(userName))
             {
-                throw new ArgumentException("Comment user id cannot be null or whitespace!");
+                throw new ArgumentException("Comment user name cannot be null or whitespace!");
             }
 
             var userId = this.users.UserIdByUsername(userName);
@@ -81,10 +81,10 @@
             return comment;
         }
 
-        public IQueryable<Comment> PostComments(int postId)
-        {
-            return this.comments.All().Where(c => c.PostId == postId && !c.IsDeleted).OrderByDescending(c => c.TimePosted);
-        }
+        //public IQueryable<Comment> PostComments(int postId)
+        //{
+        //    return this.comments.All().Where(c => c.PostId == postId && !c.IsDeleted).OrderByDescending(c => c.TimePosted);
+        //}
 
         public IQueryable<Comment> UserComments(string userId)
         {

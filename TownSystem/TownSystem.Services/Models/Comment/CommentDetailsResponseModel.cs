@@ -21,13 +21,13 @@
 
         public bool isDeleted { get; set; }
 
-        public string PostNameUrl
-        {
-            get
-            {
-                return this.PostName.ToUrl();
-            }
-        }
+        //public string PostNameUrl
+        //{
+        //    get
+        //    {
+        //        return this.PostName.ToUrl();
+        //    }
+        //}
 
 
         public DateTime TimePosted { get; set; }

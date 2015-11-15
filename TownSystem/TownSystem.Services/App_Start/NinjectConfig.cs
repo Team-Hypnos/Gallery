@@ -16,6 +16,7 @@ namespace TownSystem.Services
     using TownSystem.Data.Contracts;
     using TownSystem.Data;
     using Data.Contracts;
+    using TownSystem.Services.Data;
 
     public static class NinjectConfig
     {

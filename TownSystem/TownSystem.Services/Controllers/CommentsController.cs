@@ -1,6 +1,5 @@
 ﻿namespace TownSystem.Services.Controllers
 {
-    using System.Data.Entity;
     using System.Linq;
     using System.Web.Http;
     using Data.Contracts;
@@ -28,15 +27,15 @@
             return this.Ok(result);
         }
 
-        public IHttpActionResult Get(int postId)
-        {
-            var result = this.comments
-                .PostComments(postId)
-                .ProjectTo<CommentDetailsResponseModel>()
-                .ToList();
+        //public IHttpActionResult Get(int postId)
+        //{
+        //    var result = this.comments
+        //        .PostComments(postId)
+        //        .ProjectTo<CommentDetailsResponseModel>()
+        //        .ToList();
 
-            return this.Ok(result);
-        }
+        //    return this.Ok(result);
+        //}
 
         [Authorize]
         public IHttpActionResult Post(CommentDetailsResponseModel model)
