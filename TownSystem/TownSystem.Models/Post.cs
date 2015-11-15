@@ -1,13 +1,15 @@
 ﻿namespace TownSystem.Models
 {
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+    using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
     public class Post
     {
         public Post()
         {
             this.Comments = new HashSet<Comment>();
+            this.Likes = new HashSet<Like>();
         }
         public int Id { get; set; }
 
@@ -21,18 +23,20 @@
         [MaxLength(150)]
         public string Description { get; set; }
 
-        public int Likes { get; set; }
+        public DateTime DateCreated { get; set; } 
 
         public bool IsDeleted { get; set; }
-
-        public virtual int TownId { get; set; }
-
-        public virtual Town Town { get; set; }
 
         public string UserId { get; set; }
 
         public virtual User User { get; set; }
 
+        public virtual int TownId { get; set; }
+
+        public virtual Town Town { get; set; }
+
         public virtual ICollection<Comment> Comments { get; set; }
+
+        public virtual ICollection<Like> Likes { get; set; }
     }
 }

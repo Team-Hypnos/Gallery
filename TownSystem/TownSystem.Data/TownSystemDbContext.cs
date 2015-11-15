@@ -22,6 +22,8 @@
 
         public virtual IDbSet<Comment> Comments { get; set; }
 
+        public virtual IDbSet<Like> Likes { get; set; }
+
         public static TownSystemDbContext Create()
         {
             return new TownSystemDbContext();
