@@ -7,9 +7,9 @@
     {
         IQueryable<Like> AllLikesForPost(int postId);
 
-        int LikePost(int postId, string username);
+        void LikePost(int postId, string username);
 
-        int DislikePost(int postId, string username);
+        void DislikePost(int postId, string username);
 
         bool PostIsLikedByUser(int postId, string username);
     }
