@@ -1,7 +1,6 @@
 ﻿namespace TownSystem.Services.Data
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using TownSystem.Common.Constants;
     using TownSystem.Data.Contracts;
