@@ -17,7 +17,7 @@
 
         public string Content { get; set; }
 
-        public string UserId { get; set; }
+        public string UserName { get; set; }
 
         public bool isDeleted { get; set; }
 
@@ -39,9 +39,8 @@
 
         public void CreateMappings(IConfiguration configuration)
         {
-            string username = null;
             configuration.CreateMap<Comment, CommentDetailsResponseModel>()
-                .ForMember(c => c.UserId, opt => opt.MapFrom(c => c.User.UserName));
+                .ForMember(c => c.UserName, opt => opt.MapFrom(c => c.User.UserName));
         }
     }
 }
