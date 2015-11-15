@@ -57,7 +57,11 @@
 
         public IQueryable<Post> All(int page = 1, int pageSize = GlobalConstants.DefaltPageSize)
         {
-            throw new NotImplementedException();
+            return this.posts
+                .All()
+                .OrderByDescending(p => p.DateCreated)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize);
         }
 
         public int Add(int id, string title, string description, string userId, int townId, bool isDeleted = false)
@@ -81,7 +85,22 @@
 
         public Post Edit(int id, string title, string description, string userId, int townId, bool isDeleted)
         {
-            throw new NotImplementedException();
+            var editedPost = this.posts
+                .All()
+                .Where(p => p.Id == id && p.UserId == userId && p.TownId == townId)
+                .FirstOrDefault();
+
+            if (editedPost == null)
+            {
+                return null;
+            }
+
+            editedPost.Title = title;
+            editedPost.Description = description;
+            editedPost.IsDeleted = isDeleted;
+
+            this.posts.SaveChanges();
+            return editedPost;
         }
 
         public void Delete(int id)
