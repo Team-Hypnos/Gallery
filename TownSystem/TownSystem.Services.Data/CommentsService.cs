@@ -82,10 +82,10 @@
             return comment;
         }
 
-        //public IQueryable<Comment> PostComments(int postId)
-        //{
-        //    return this.comments.All().Where(c => c.PostId == postId && !c.IsDeleted).OrderByDescending(c => c.TimePosted);
-        //}
+        public IQueryable<Comment> PostComments(int postId)
+        {
+            return this.comments.All().Where(c => c.PostId == postId && !c.IsDeleted).OrderByDescending(c => c.TimePosted);
+        }
 
         public IQueryable<Comment> UserComments(string userId)
         {
