@@ -35,7 +35,7 @@
             var comment = new Comment
             {
                 TimePosted = DateTime.Now,
-                PostId = null,
+                PostId = id,
                 Content = content,
                 UserId = userId
 
