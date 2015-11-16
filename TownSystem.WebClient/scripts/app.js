@@ -1,6 +1,6 @@
 'use strict';
 
-var galleryApp = angular.module('galleryApp', ['ngRoute', 'ngResource', 'ngSanitize'])
+var galleryApp = angular.module('galleryApp', ['ngRoute', 'ngResource', 'ngSanitize', 'pubnub.angular.service'])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/home', {controller: 'HomeController', templateUrl: 'views/home.html'})
@@ -12,6 +12,7 @@ var galleryApp = angular.module('galleryApp', ['ngRoute', 'ngResource', 'ngSanit
             .when('/post', {controller: 'AddPostController', templateUrl: 'views/new-post.html'})
             .when('/categories', {controller: 'CategoriesController', templateUrl: 'views/categories.html'})
             .when('/profile/:username/', {controller: 'ProfileController', templateUrl: 'views/profile.html'})
+            .when('/wall-of-fame', {controller: 'WallOfFameController', templateUrl: 'views/wall-of-fame.html'})
             .otherwise({redirectTo: '/home'});
 
         // TODO: define all routes and templates

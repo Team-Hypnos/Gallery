@@ -399,3 +399,12 @@ hr.style-two {
     margin: 25px;
     border-radius: 150px !important;
 }
+
+#chat-output {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+#chat-box {
+    margin-right: 25px;
+}
