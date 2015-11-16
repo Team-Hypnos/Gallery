@@ -2,8 +2,21 @@
 <br/>
 <br/>
 <br/><br/>
-<div class="row">
-    <div class="col-md-5"></div>
+<div class="row" ng-cloak>
+    <div class="col-md-5">
+        <div class="col-md-12 text-center">
+            <h2 id="top-towns">Top 4</h2>
+        </div>
+        <ul id="top-towns-container" class="row">
+            <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4 top-towns-pictures" ng-repeat="bst in best">
+                <img class="top-towns-picture" src="{{ bst.picture }}"/>
+                <p class="row">
+                    <span class="col-md-10 top-towns-name">{{ bst.cityName }}</span>
+                    <span class="col-md-2 top-towns-likes">{{ bst.likes }} likes</span>
+                </p>
+            </li>
+        </ul>
+    </div>
     <div class="col-md-7">
         <div id="chat-box" class="panel panel-primary">
             <div class="panel-heading">Bulgaria Best Town 2015 - Live Chat</div>
@@ -11,9 +24,9 @@
             <div class="panel-body">
                 <form id="chat">
                     <div class="input-group">
-                        <input type="text" class="form-control" id="chat-input" />
+                        <input type="text" class="form-control" id="chat-input" autofocus/>
                         <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default">Send Message</button>
+                            <button type="submit" class="btn btn-default">Send Message</button>
                         </span>
                     </div>
                 </form>
