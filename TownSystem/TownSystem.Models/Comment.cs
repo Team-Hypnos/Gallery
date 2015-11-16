@@ -2,14 +2,15 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using Common.Constants;
 
     public class Comment
     {
         public int Id { get; set; }
 
         [Required]
-        [MinLength(4)]
-        [MaxLength(100)]
+        [MinLength(GlobalConstants.NameMinLength)]
+        [MaxLength(GlobalConstants.NameMaxLength)]
         public string Content { get; set; }
 
         [Required]

@@ -1,6 +1,7 @@
 ﻿namespace TownSystem.ConsoleClient
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
 
     using Data;
@@ -14,16 +15,21 @@
         public static void Main()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<TownSystemDbContext, Configuration>());
-            IRepository<Category> data = new EfGenericRepository<Category>(new TownSystemDbContext());
+            IRepository<Category> categories = new EfGenericRepository<Category>(new TownSystemDbContext());
+            IRepository<Town> towns = new EfGenericRepository<Town>(new TownSystemDbContext());
 
             var category = new Category
             {
                 Name = "Seasight"
             };
-
+            var town = new Town
+            {
+                Categories = new List<Category>() { category },
+                Name = "Varna"
+            };
             Console.WriteLine("Testing for adding town");
-            data.Add(category);
-
+            categories.Add(category);
+            towns.Add(town);
             // Deleting
             // var towns = data.All();
             // foreach (var t in towns)
@@ -31,7 +37,7 @@
             //    data.Delete(t);
             // }
 
-            data.SaveChanges();
+            categories.SaveChanges();
         }
     }
 }

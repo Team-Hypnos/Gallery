@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using Common.Constants;
 
     public class Post
     {
@@ -12,8 +13,8 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(4)]
-        [MaxLength(50)]
+        [MinLength(GlobalConstants.NameMinLength)]
+        [MaxLength(GlobalConstants.NameMaxLength)]
         public string Title { get; set; }
 
         [Required]

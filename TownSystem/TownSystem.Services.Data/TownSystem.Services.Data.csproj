@@ -61,9 +61,15 @@
     <Compile Include="CommentsService.cs" />
     <Compile Include="Contracts\ICategoriesService.cs" />
     <Compile Include="Contracts\ICommentsService.cs" />
+    <Compile Include="Contracts\ITownsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TownsService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TownSystem.Common\TownSystem.Common.csproj">
+      <Project>{faaa9a08-14a8-4470-943b-fc0d4a78d996}</Project>
+      <Name>TownSystem.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TownSystem.Data\TownSystem.Data.csproj">
       <Project>{f5e641a1-55b0-4faf-bbd2-ec98d20572e7}</Project>
       <Name>TownSystem.Data</Name>

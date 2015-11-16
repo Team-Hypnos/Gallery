@@ -2,12 +2,13 @@
 {
     using System.Linq;
     using Models;
+    using Common.Constants;
 
     public interface ICategoriesService
     {
-        IQueryable<Category> All();
+        IQueryable<Category> All(int page = 1, int pageSize = GlobalConstants.DefaultPageSize);
 
-        int Add(string name);
+        Category Add(string name);
 
         IQueryable<Category> ById(string categoryName);
     }

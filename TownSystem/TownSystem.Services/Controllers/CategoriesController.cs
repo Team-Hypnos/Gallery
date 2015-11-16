@@ -7,6 +7,7 @@
     using Models.Category;
     using AutoMapper.QueryableExtensions;
 
+    [RoutePrefix("api/categories")]
     public class CategoriesController : ApiController
     {
         private readonly ICategoriesService categories;
@@ -17,6 +18,7 @@
         }
 
         [EnableCors("*", "*", "*")]
+        [HttpGet]
         public IHttpActionResult Get()
         {
             var result = this.categories
@@ -26,9 +28,10 @@
 
             return this.Ok(result);
         }
-
-        [Authorize]
-        public IHttpActionResult Get(string id)
+        
+        [Route("{id}")]
+        [HttpGet]
+        public IHttpActionResult GetById(string id)
         {
             if (string.IsNullOrEmpty(id))
             {
@@ -49,6 +52,7 @@
         }
 
         [Authorize]
+        [HttpPost]
         public IHttpActionResult Post(CategoryDetailsResponseModel model)
         {
             if (!this.ModelState.IsValid)

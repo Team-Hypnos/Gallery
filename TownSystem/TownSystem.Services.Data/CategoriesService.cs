@@ -19,7 +19,7 @@
             this.towns = townsRepo;
         }
 
-        public int Add(string name)
+        public Category Add(string name)
         {
             if (string.IsNullOrEmpty(name) || string.IsNullOrWhiteSpace(name))
             {
@@ -34,16 +34,18 @@
             this.categories.Add(newCategory);
             this.categories.SaveChanges();
 
-            return newCategory.Id;
+            return newCategory;
         }
 
-        public IQueryable<Category> All()
+        public IQueryable<Category> All(int page = 1, int pageSize = 10)
         {
             return this.categories
                 .All()
-                .OrderByDescending(c => c.Name);
+                .OrderByDescending(c => c.Name)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize);
         }
-
+        
         public IQueryable<Category> ById(string categoryName)
         {
             return this.categories
