@@ -9,24 +9,19 @@
    public class CommentsService : ICommentsService
     {
         private readonly IRepository<Comment> comments;
+       private readonly IUsersService users;
+       
 
-
-        public CommentsService(IRepository<Comment> commentsRepo)
+        public CommentsService(IRepository<Comment> commentsRepo, IUsersService usersRepo)
         {
             this.comments = commentsRepo;
+            this.users = usersRepo;
         }
 
-        public Comment Add(int id, string content, string userId)
+        public Comment Add(int? id, string content, string userName)
         {
-            if (string.IsNullOrEmpty(content) || string.IsNullOrWhiteSpace(content))
-            {
-                throw new ArgumentException("Comment content cannot be null or whitespace!");
-            }
 
-            if (string.IsNullOrEmpty(userId) || string.IsNullOrWhiteSpace(userId))
-            {
-                throw new ArgumentException("Comment user id cannot be null or whitespace!");
-            }
+            var userId = this.users.UserIdByUsername(userName);
 
             var comment = new Comment
             {

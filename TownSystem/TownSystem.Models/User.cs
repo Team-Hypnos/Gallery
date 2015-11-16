@@ -14,6 +14,7 @@
         public User()
         {
             this.Posts = new HashSet<Post>();
+            this.Likes = new HashSet<Like>();
         }
 
         [MinLength(GlobalConstants.NameMinLength)]
@@ -25,6 +26,8 @@
         public string LastName { get; set; }
 
         public virtual ICollection<Post> Posts { get; set; }
+
+        public virtual ICollection<Like> Likes { get; set; }
 
         public virtual int? PictureId { get; set; }
 

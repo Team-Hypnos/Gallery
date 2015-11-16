@@ -1,6 +1,5 @@
 ﻿namespace TownSystem.Services.Controllers
 {
-    using System.Data.Entity;
     using System.Linq;
     using System.Web.Http;
     using Data.Contracts;
@@ -39,10 +38,11 @@
         }
 
         [Authorize]
-        public IHttpActionResult Post(CommentDetalsRequestModel model)
+        public IHttpActionResult Post(CommentDetailsResponseModel model)
         {
 
-            var comment = this.comments.Add(model.PostId, model.Content, model.UserId);
+            var comment = this.comments.Add(model.PostId, model.Content, model.UserName);
+       
 
             var result = this.comments
                 .ById(comment.Id)

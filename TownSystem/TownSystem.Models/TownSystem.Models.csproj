@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Like.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Enums\CategoryTypes.cs" />
