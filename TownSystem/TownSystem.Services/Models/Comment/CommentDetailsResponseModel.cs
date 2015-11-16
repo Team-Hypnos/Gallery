@@ -1,10 +1,9 @@
 ﻿namespace TownSystem.Services.Models.Comment
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
     using AutoMapper;
     using Infrastructure.Mapping;
-    using MissingFeatures;
-    using Newtonsoft.Json;
     using TownSystem.Models;
 
     public class CommentDetailsResponseModel : IMapFrom<Comment>, IHaveCustomMappings
@@ -14,19 +13,13 @@
 
         public string PostName { get; set; }
 
+        [MinLength(4, ErrorMessage = "Content must be at least 4 characters long.")]
+        [MaxLength(100, ErrorMessage = "Content must be no longer than 100 characters.")]
         public string Content { get; set; }
 
         public string UserName { get; set; }
 
         public bool isDeleted { get; set; }
-
-        //public string PostNameUrl
-        //{
-        //    get
-        //    {
-        //        return this.PostName.ToUrl();
-        //    }
-        //}
 
 
         public DateTime TimePosted { get; set; }
