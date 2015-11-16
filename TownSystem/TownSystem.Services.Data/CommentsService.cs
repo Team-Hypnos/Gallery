@@ -20,15 +20,6 @@
 
         public Comment Add(int? id, string content, string userName)
         {
-            if (string.IsNullOrEmpty(content) || string.IsNullOrWhiteSpace(content))
-            {
-                throw new ArgumentException("Comment content cannot be null or whitespace!");
-            }
-
-            if (string.IsNullOrEmpty(userName) || string.IsNullOrWhiteSpace(userName))
-            {
-                throw new ArgumentException("Comment user name cannot be null or whitespace!");
-            }
 
             var userId = this.users.UserIdByUsername(userName);
 
