@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using TownSystem.Common.Constants;
-using TownSystem.Services.Data.Contracts;
-using TownSystem.Services.Models.Post;
-
-namespace TownSystem.Services.Controllers
+﻿namespace TownSystem.Services.Controllers
 {
+    using System.Linq;
+    using System.Web.Http;
+    using TownSystem.Common.Constants;
+    using TownSystem.Services.Data.Contracts;
+    using TownSystem.Services.Models.Post;
+    using AutoMapper.QueryableExtensions;
+
     public class PostsController : ApiController
     {
         private readonly IPostsService posts;
@@ -23,7 +20,9 @@ namespace TownSystem.Services.Controllers
         public IHttpActionResult Get()
         {
             var result = this.posts
-                .LatestPosts();
+                .LatestPosts()
+                .ProjectTo<PostDetailsResponseModel>()
+                .ToList();
 
             return this.Ok(result);
         }
@@ -31,24 +30,46 @@ namespace TownSystem.Services.Controllers
         // GET(public) api/posts{postId}
         public IHttpActionResult Get(int id)
         {
-            return this.Ok();
+            var result = this.posts
+                .PostById(id)
+                .ProjectTo<PostDetailsResponseModel>()
+                .ToList();
+
+            return this.Ok(result);
         }
 
         // GET(public) api/posts?page=P
         public IHttpActionResult Get(int page, int pageSize = GlobalConstants.DefaltPageSize)
         {
+            var result = this.posts
+                .All(page, pageSize)
+                .ProjectTo<PostDetailsResponseModel>()
+                .ToList();
+
             return this.Ok();
         }
         
-
         // POST(authorize) api/posts
         [Authorize]
         public IHttpActionResult Post(PostDetailsRequestModel model)
         {
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+
+            var createdPostId = this.posts.Add(
+                model.Title,
+                model.Description,
+                model.DateCreated,
+                this.User.Identity.Name,
+                model.TownId,
+                model.IsDeleted);
+
             return this.Ok();
         }
 
-        // POST(authorize) api/posts/{postID}/comments
+        // POST(authorize) api/posts/{postID}/comments -> create new comment for selected post
 
         
     }

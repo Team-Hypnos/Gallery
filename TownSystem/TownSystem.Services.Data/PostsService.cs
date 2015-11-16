@@ -64,14 +64,13 @@
                 .Take(pageSize);
         }
 
-        public int Add(int id, string title, string description, string userId, int townId, bool isDeleted = false)
+        public int Add(string title, string description, DateTime dateCreated, string userId, int townId, bool isDeleted = false)
         {
             var newPost = new Post
             {
-                Id = id,
                 Title = title,
                 Description = description,
-                DateCreated = DateTime.Now,
+                DateCreated = dateCreated,
                 IsDeleted = isDeleted,              
                 UserId = userId,
                 TownId = townId
