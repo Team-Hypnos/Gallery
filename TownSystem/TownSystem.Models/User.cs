@@ -17,12 +17,12 @@
             this.Likes = new HashSet<Like>();
         }
 
-        [MinLength(GlobalConstants.NameMinLength)]
-        [MaxLength(GlobalConstants.NameMaxLength)]
+        [MinLength(ValidationConstants.NameMinLength)]
+        [MaxLength(ValidationConstants.NameMaxLength)]
         public string FirstName { get; set; }
 
-        [MinLength(GlobalConstants.NameMinLength)]
-        [MaxLength(GlobalConstants.NameMaxLength)]
+        [MinLength(ValidationConstants.NameMinLength)]
+        [MaxLength(ValidationConstants.NameMaxLength)]
         public string LastName { get; set; }
 
         public virtual ICollection<Post> Posts { get; set; }

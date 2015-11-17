@@ -9,8 +9,8 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(GlobalConstants.NameMinLength)]
-        [MaxLength(GlobalConstants.NameMaxLength)]
+        [MinLength(ValidationConstants.NameMinLength)]
+        [MaxLength(ValidationConstants.NameMaxLength)]
         public string Content { get; set; }
 
         [Required]

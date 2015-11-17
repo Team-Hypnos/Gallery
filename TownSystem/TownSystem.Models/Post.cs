@@ -1,14 +1,9 @@
 ﻿namespace TownSystem.Models
 {
-<<<<<<< HEAD
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using Common.Constants;
-=======
-    using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
->>>>>>> 9ea260a7226da8f65c356ae283295ab261aa529b
 
     public class Post
     {
@@ -20,8 +15,8 @@ using System.ComponentModel.DataAnnotations;
         public int Id { get; set; }
 
         [Required]
-        [MinLength(GlobalConstants.NameMinLength)]
-        [MaxLength(GlobalConstants.NameMaxLength)]
+        [MinLength(ValidationConstants.NameMinLength)]
+        [MaxLength(ValidationConstants.NameMaxLength)]
         public string Title { get; set; }
 
         [Required]
@@ -29,7 +24,7 @@ using System.ComponentModel.DataAnnotations;
         [MaxLength(150)]
         public string Description { get; set; }
 
-        public DateTime DateCreated { get; set; } 
+        public DateTime DateCreated { get; set; }
 
         public bool IsDeleted { get; set; }
 

@@ -15,8 +15,8 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(GlobalConstants.NameMinLength)]
-        [MaxLength(GlobalConstants.NameMaxLength)]
+        [MinLength(ValidationConstants.NameMinLength)]
+        [MaxLength(ValidationConstants.NameMaxLength)]
         public string Name { get; set; }
 
         public virtual ICollection<Post> Posts { get; set; }
