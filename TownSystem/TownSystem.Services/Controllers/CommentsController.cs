@@ -16,7 +16,6 @@
             this.comments = commentsSevice;
         }
 
-
         public IHttpActionResult Get()
         {
             var result = this.comments
@@ -40,9 +39,7 @@
         [Authorize]
         public IHttpActionResult Post(CommentDetailsResponseModel model)
         {
-
             var comment = this.comments.Add(model.PostId, model.Content, model.UserName);
-       
 
             var result = this.comments
                 .ById(comment.Id)
