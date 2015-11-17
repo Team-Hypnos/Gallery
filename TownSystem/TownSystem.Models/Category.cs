@@ -2,8 +2,8 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using Enums;
 
+    using Newtonsoft.Json;
 
     public class Category
     {
@@ -17,6 +17,7 @@
         [Required]
         public string Name { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Town> Towns { get; set; }
     }
 }
