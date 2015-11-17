@@ -39,7 +39,7 @@
         }
 
         // GET(public) api/posts?page=P
-        public IHttpActionResult Get(int page, int pageSize = GlobalConstants.DefaltPageSize)
+        public IHttpActionResult Get(int page, int pageSize = GlobalConstants.DefaultPageSize)
         {
             var result = this.posts
                 .All(page, pageSize)

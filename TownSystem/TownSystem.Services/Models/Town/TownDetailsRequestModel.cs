@@ -8,8 +8,8 @@
 
     public class TownDetailsRequestModel : IMapFrom<Category>
     {
-        [MinLength(GlobalConstants.NameMinLength)]
-        [MaxLength(GlobalConstants.NameMaxLength)]
+        [MinLength(ValidationConstants.NameMinLength)]
+        [MaxLength(ValidationConstants.NameMaxLength)]
         public string Name { get; set; }
 
         public ICollection<string> Categories { get; set; }

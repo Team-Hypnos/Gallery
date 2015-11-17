@@ -55,7 +55,7 @@
                 .Where(p => !p.IsDeleted && p.Likes.Any(l => l.UserId == userId));
         }
 
-        public IQueryable<Post> All(int page = 1, int pageSize = GlobalConstants.DefaltPageSize)
+        public IQueryable<Post> All(int page = 1, int pageSize = GlobalConstants.DefaultPageSize)
         {
             return this.posts
                 .All()

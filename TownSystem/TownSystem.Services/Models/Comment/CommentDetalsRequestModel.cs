@@ -14,8 +14,8 @@
     {
         public int Id { get; set; }
 
-        [MinLength(GlobalConstants.NameMinLength)]
-        [MaxLength(GlobalConstants.NameMaxLength)]
+        [MinLength(ValidationConstants.NameMinLength)]
+        [MaxLength(ValidationConstants.NameMaxLength)]
         public string Content { get; set; }
 
         public int PostId { get; set; }
