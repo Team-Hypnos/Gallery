@@ -49,8 +49,10 @@
         }
 
 
-        public Comment Edit(int id, string content, string userId)
+        public Comment Edit(int id, string content,  string userName)
         {
+            var userId = this.users.UserIdByUsername(userName);
+
             var comment = this.comments.All().Where(c => c.Id == id && c.UserId == userId).FirstOrDefault();
 
             if (comment == null)
@@ -64,8 +66,10 @@
             return comment;
         }
 
-        public Comment Delete(int id, string userId)
+        public Comment Delete(int id, string userName)
         {
+            var userId = this.users.UserIdByUsername(userName);
+
             var comment = this.comments.All().Where(c => c.Id == id && c.UserId == userId).FirstOrDefault();
 
             if (comment == null)

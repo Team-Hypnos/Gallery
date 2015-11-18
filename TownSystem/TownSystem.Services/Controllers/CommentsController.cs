@@ -50,19 +50,29 @@
 
         [Authorize]
         [HttpPut]
-        public  IHttpActionResult Edit(CommentDetalsRequestModel model)
+        public IHttpActionResult Edit(CommentDetalsRequestModel model)
         {
-            var edittedComment =  this.comments.Edit(model.Id, model.Content, model.UserName);
-            return this.Ok(edittedComment);
+            var comment = this.comments.Edit(model.Id, model.Content, model.UserName);
+
+            var result = this.comments
+                .ById(comment.Id)
+                .ProjectTo<CommentDetailsResponseModel>()
+                .FirstOrDefault();
+
+            return this.Ok(result);
         }
 
         [Authorize]
-        [HttpPut]
+        [HttpDelete]
         public IHttpActionResult Delete(CommentDetalsRequestModel model)
         {
-            var deletedComment = this.comments.Delete(model.Id, model.UserName);
+            var comment = this.comments.Delete(model.Id, model.UserName);
+            var result = this.comments
+                .ById(comment.Id)
+                .ProjectTo<CommentDetailsResponseModel>()
+                .FirstOrDefault();
 
-            return this.Ok(deletedComment);
+            return this.Ok(result);
         }
     }
 }
