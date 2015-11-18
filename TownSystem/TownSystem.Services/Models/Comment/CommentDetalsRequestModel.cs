@@ -14,7 +14,7 @@
         [MaxLength(ValidationConstants.NameMaxLength)]
         public string Content { get; set; }
 
-        public int PostId { get; set; }
+        public int? PostId { get; set; }
 
         public string UserName { get; set; }
 
