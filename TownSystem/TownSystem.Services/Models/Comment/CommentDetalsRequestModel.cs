@@ -15,7 +15,8 @@
         public string Content { get; set; }
 
         public int? PostId { get; set; }
-
+        
+        [Required]
         public string UserName { get; set; }
 
         public void CreateMappings(IConfiguration configuration)
