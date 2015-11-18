@@ -10,6 +10,8 @@
 
         IQueryable<Comment> ById(int id);
 
+        IQueryable<Comment> ByIdDeleted(int id);
+
         IQueryable<Comment> PostComments(int postId);
 
         IQueryable<Comment> UserComments(string userId);
@@ -18,6 +20,6 @@
 
         Comment Edit(int id, string content, string userId);
 
-        void Delete(int id);
+        Comment Delete(int id, string userId);
     }
 }

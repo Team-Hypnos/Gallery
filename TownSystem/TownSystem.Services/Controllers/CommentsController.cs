@@ -36,12 +36,44 @@
         }
 
         [Authorize]
-        public IHttpActionResult Post(CommentDetailsResponseModel model)
+        public IHttpActionResult Post(CommentDetalsRequestModel model)
         {
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+
             var comment = this.comments.Add(model.PostId, model.Content, model.UserName);
 
             var result = this.comments
                 .ById(comment.Id)
+                .ProjectTo<CommentDetailsResponseModel>()
+                .FirstOrDefault();
+
+            return this.Ok(result);
+        }
+
+        [Authorize]
+        [HttpPut]
+        public IHttpActionResult Edit(CommentDetalsRequestModel model)
+        {
+            var comment = this.comments.Edit(model.Id, model.Content, model.UserName);
+
+            var result = this.comments
+                .ById(comment.Id)
+                .ProjectTo<CommentDetailsResponseModel>()
+                .FirstOrDefault();
+
+            return this.Ok(result);
+        }
+
+        [Authorize]
+        [HttpDelete]
+        public IHttpActionResult Delete(CommentDetalsRequestModel model)
+        {
+            var comment = this.comments.Delete(model.Id, model.UserName);
+            var result = this.comments
+                .ByIdDeleted(comment.Id)
                 .ProjectTo<CommentDetailsResponseModel>()
                 .FirstOrDefault();
 
