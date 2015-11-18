@@ -23,8 +23,8 @@
             <div class="widget-area no-padding blank">
                 <div class="status-upload">
                     <form>
-                        <textarea id="comment-textarea" placeholder="Say something :)" ></textarea>
-                        <button type="submit" class="btn btn-success green">Add Comment</button>
+                        <textarea id="comment-textarea" ng-model="commentContent" placeholder="Say something :)" ></textarea>
+                        <button ng-click="addNewComment(commentContent)" type="submit" class="btn btn-success green">Add Comment</button>
                     </form>
                 </div>
             </div>

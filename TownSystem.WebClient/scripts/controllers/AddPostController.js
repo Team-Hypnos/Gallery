@@ -1,6 +1,6 @@
 'use strict';
 
-galleryApp.controller('AddPostController', function AddPostController($scope, $location, createPost, $document) {
+galleryApp.controller('AddPostController', function AddPostController($scope, $location, createPost) {
     var isLogged = localStorage.getItem('isLoggedIn');
 
     if (!isLogged) {
