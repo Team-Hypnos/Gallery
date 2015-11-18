@@ -38,6 +38,11 @@
         [Authorize]
         public IHttpActionResult Post(CommentDetalsRequestModel model)
         {
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+
             var comment = this.comments.Add(model.PostId, model.Content, model.UserName);
 
             var result = this.comments
