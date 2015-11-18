@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.Models", "TownSystem.Models\TownSystem.Models.csproj", "{78FD5502-E904-4BA0-9DAC-D4C2D0A0D223}"
 EndProject
@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.Services.Data", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.Common", "TownSystem.Common\TownSystem.Common.csproj", "{FAAA9A08-14A8-4470-943B-FC0D4A78D996}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.Api.Tests", "TownSystem.Api.Tests\TownSystem.Api.Tests.csproj", "{72044C9F-4DB7-4A76-AF19-429232365A37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TownSystem.Services.Tests", "TownSystem.Services.Tests\TownSystem.Services.Tests.csproj", "{72044C9F-4DB7-4A76-AF19-429232365A37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
