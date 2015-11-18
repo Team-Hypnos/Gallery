@@ -9,7 +9,6 @@
     using Data.Migrations;
     using Models;
 
-
     public class Starup
     {
         public static void Main()

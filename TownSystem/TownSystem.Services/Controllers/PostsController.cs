@@ -69,8 +69,6 @@
             return this.Ok();
         }
 
-        // POST(authorize) api/posts/{postID}/comments -> create new comment for selected post
-
-        
+        // POST(authorize) api/posts/{postID}/comments -> create new comment for selected post        
     }
 }

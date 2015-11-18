@@ -6,11 +6,10 @@
     using TownSystem.Data.Contracts;
     using Models;
 
-   public class CommentsService : ICommentsService
+    public class CommentsService : ICommentsService
     {
         private readonly IRepository<Comment> comments;
-       private readonly IUsersService users;
-       
+        private readonly IUsersService users;
 
         public CommentsService(IRepository<Comment> commentsRepo, IUsersService usersRepo)
         {
@@ -20,7 +19,6 @@
 
         public Comment Add(int? id, string content, string userName)
         {
-
             var userId = this.users.UserIdByUsername(userName);
 
             var comment = new Comment
@@ -56,7 +54,6 @@
             comment.IsDeleted = true;
             this.comments.SaveChanges();
         }
-
 
         public Comment Edit(int id, string content, string userId)
         {

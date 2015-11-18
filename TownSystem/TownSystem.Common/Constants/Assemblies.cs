@@ -4,6 +4,5 @@
     {
         public const string WebApi = "TownSystem.Services";
         public const string DataServices = "TownSystem.Services.Data";
-
     }
 }

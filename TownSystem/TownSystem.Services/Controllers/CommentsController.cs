@@ -6,7 +6,6 @@
     using AutoMapper.QueryableExtensions;
     using Models.Comment;
 
-
     public class CommentsController : ApiController
     {
         private readonly ICommentsService comments;
@@ -47,7 +46,6 @@
                 .FirstOrDefault();
 
             return this.Ok(result);
-
         }
     }
 }

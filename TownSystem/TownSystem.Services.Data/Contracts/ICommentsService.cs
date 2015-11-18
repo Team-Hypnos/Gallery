@@ -4,7 +4,6 @@
     using System.Linq;
     using Models;
 
-
     public interface ICommentsService
     {
         IQueryable<Comment> All();
@@ -20,6 +19,5 @@
         Comment Edit(int id, string content, string userId);
 
         void Delete(int id);
-
     }
 }

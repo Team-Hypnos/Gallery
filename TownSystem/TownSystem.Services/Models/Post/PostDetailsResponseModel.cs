@@ -52,7 +52,6 @@
             }
         }
 
-
         public void CreateMappings(IConfiguration configuration)
         {
             string username = null;

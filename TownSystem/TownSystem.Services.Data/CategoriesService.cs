@@ -25,12 +25,12 @@
             {
                 throw new ArgumentException("Category name cannot be null or whitespace!");
             }
-            
+
             var newCategory = new Category
             {
                 Name = name
             };
-            
+
             this.categories.Add(newCategory);
             this.categories.SaveChanges();
 
@@ -45,7 +45,7 @@
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize);
         }
-        
+
         public IQueryable<Category> ById(string categoryName)
         {
             return this.categories

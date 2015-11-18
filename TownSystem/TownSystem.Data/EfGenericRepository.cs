@@ -1,12 +1,11 @@
-﻿using TownSystem.Data.Contracts;
-
-namespace TownSystem.Data
+﻿namespace TownSystem.Data
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Linq;
 
+    using TownSystem.Data.Contracts;
 
     public class EfGenericRepository<T> : IRepository<T> where T : class
     {

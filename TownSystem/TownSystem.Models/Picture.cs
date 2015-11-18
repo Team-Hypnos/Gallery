@@ -4,8 +4,6 @@
     using System.ComponentModel.DataAnnotations;
     using Enums;
 
-
-
     public class Picture
     {
         public Picture()

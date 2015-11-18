@@ -8,7 +8,6 @@
 
     public class CommentDetailsResponseModel : IMapFrom<Comment>, IHaveCustomMappings
     {
-
         public int? PostId { get; set; }
 
         public string PostName { get; set; }
@@ -20,7 +19,6 @@
         public string UserName { get; set; }
 
         public bool isDeleted { get; set; }
-
 
         public DateTime TimePosted { get; set; }
 

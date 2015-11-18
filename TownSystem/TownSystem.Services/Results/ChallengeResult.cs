@@ -6,7 +6,6 @@
     using System.Threading.Tasks;
     using System.Web.Http;
 
-
     public class ChallengeResult : IHttpActionResult
     {
         public ChallengeResult(string loginProvider, ApiController controller)

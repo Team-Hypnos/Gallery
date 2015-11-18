@@ -21,7 +21,6 @@
                 .Where(u => u.UserName == username);
         }
 
-
         public string UserIdByUsername(string username)
         {
             return this.users
