@@ -1,16 +1,12 @@
 ﻿namespace TownSystem.Services.Models.Comment
 {
-    using System;
-    using System.Collections.Generic;
+    using Common.Constants;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Web;
     using AutoMapper;
     using Infrastructure.Mapping;
-    using Common.Constants;
     using TownSystem.Models;
 
-    public class CommentDetalsRequestModel
+    public class CommentDetalsRequestModel : IMapFrom<Comment>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
@@ -20,6 +16,12 @@
 
         public int PostId { get; set; }
 
-        public string UserId { get; set; }
+        public string UserName { get; set; }
+
+        public void CreateMappings(IConfiguration configuration)
+        {
+            configuration.CreateMap<Comment, CommentDetailsResponseModel>()
+                .ForMember(c => c.UserName, opt => opt.MapFrom(c => c.User.UserName));
+        }
     }
 }

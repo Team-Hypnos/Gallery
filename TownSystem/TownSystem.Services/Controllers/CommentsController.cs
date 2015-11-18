@@ -36,7 +36,7 @@
         }
 
         [Authorize]
-        public IHttpActionResult Post(CommentDetailsResponseModel model)
+        public IHttpActionResult Post(CommentDetalsRequestModel model)
         {
             var comment = this.comments.Add(model.PostId, model.Content, model.UserName);
 
@@ -46,6 +46,23 @@
                 .FirstOrDefault();
 
             return this.Ok(result);
+        }
+
+        [Authorize]
+        [HttpPut]
+        public  IHttpActionResult Edit(CommentDetalsRequestModel model)
+        {
+            var edittedComment =  this.comments.Edit(model.Id, model.Content, model.UserName);
+            return this.Ok(edittedComment);
+        }
+
+        [Authorize]
+        [HttpPut]
+        public IHttpActionResult Delete(CommentDetalsRequestModel model)
+        {
+            var deletedComment = this.comments.Delete(model.Id, model.UserName);
+
+            return this.Ok(deletedComment);
         }
     }
 }

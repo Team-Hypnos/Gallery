@@ -18,6 +18,6 @@
 
         Comment Edit(int id, string content, string userId);
 
-        void Delete(int id);
+        Comment Delete(int id, string userId);
     }
 }

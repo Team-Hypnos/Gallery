@@ -48,12 +48,6 @@
             return this.comments.All().Where(c => c.Id == id && !c.IsDeleted);
         }
 
-        public void Delete(int id)
-        {
-            var comment = this.comments.All().Where(c => c.Id == id).FirstOrDefault();
-            comment.IsDeleted = true;
-            this.comments.SaveChanges();
-        }
 
         public Comment Edit(int id, string content, string userId)
         {
@@ -65,6 +59,21 @@
             }
 
             comment.Content = content;
+            this.comments.SaveChanges();
+
+            return comment;
+        }
+
+        public Comment Delete(int id, string userId)
+        {
+            var comment = this.comments.All().Where(c => c.Id == id && c.UserId == userId).FirstOrDefault();
+
+            if (comment == null)
+            {
+                return null;
+            }
+
+            comment.IsDeleted = true;
             this.comments.SaveChanges();
 
             return comment;

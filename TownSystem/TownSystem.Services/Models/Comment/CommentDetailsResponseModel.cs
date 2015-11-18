@@ -8,6 +8,8 @@
 
     public class CommentDetailsResponseModel : IMapFrom<Comment>, IHaveCustomMappings
     {
+        public int Id { get; set; }
+
         public int? PostId { get; set; }
 
         public string PostName { get; set; }
