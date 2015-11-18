@@ -31,9 +31,11 @@ galleryApp.factory('userAuthentication', function ($resource, $q, $http) {
                     }
                 })
                 .success(function (data) {
+                    toastr.success('Congratulation! You are now member of Bulgarian Best Town!', '', {"positionClass": "toast-bottom-right"});
                     deferred.resolve(data);
                 })
                 .error(function (error) {
+                    toastr.error('Something went wrong. Please try to register again.', '', {"positionClass": "toast-bottom-right"});
                     deferred.reject(error);
                 });
 
@@ -67,6 +69,7 @@ galleryApp.factory('userAuthentication', function ($resource, $q, $http) {
                     deferred.resolve(data);
                 })
                 .error(function (error) {
+                    toastr.error('Invalid username or password.', '', {"positionClass": "toast-bottom-right"});
                     deferred.reject(error);
                 });
 

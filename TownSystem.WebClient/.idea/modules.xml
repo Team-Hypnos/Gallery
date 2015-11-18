@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TeamSystem.WebClient.iml" filepath="$PROJECT_DIR$/.idea/TeamSystem.WebClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TownSystem.WebClient.iml" filepath="$PROJECT_DIR$/.idea/TownSystem.WebClient.iml" />
     </modules>
   </component>
 </project>

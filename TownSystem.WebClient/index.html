@@ -5,11 +5,11 @@
     <title>Bulgaria Best Town</title>
     <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="./bower_components/toastr/toastr.css"/>
     <link rel="stylesheet" href="content/additional-styles.css"/>
     <link rel="stylesheet" href="content/comment-box.css"/>
     <link rel="stylesheet" href="content/add-comment.css"/>
     <link rel="stylesheet" href="content/upload-file-box.css"/>
-
 </head>
 <body ng-app="galleryApp" ng-controller="MainController" ng-cloak>
     <div navigation-bar></div>
@@ -25,12 +25,14 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="bower_components/pubnub-angular/lib/pubnub-angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
 
     <!-- Main application -->
     <script src="scripts/app.js"></script>
 
     <!-- Services -->
     <script src="scripts/services/userAuthentication.js"></script>
+    <script src="scripts/services/createPost.js"></script>
 
     <!-- Controllers -->
     <script src="scripts/controllers/MainController.js"></script>
