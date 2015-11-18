@@ -19,7 +19,7 @@
 
         int Add(string title, string description, DateTime dateCreated, string userId, int townId, bool isDeleted);
 
-        Post Edit(int id, string title, string description, string userId, int townId, bool isDeleted);
+        //Post Edit(int id, string title, string description, string userId, int townId, bool isDeleted);
 
         void Delete(int id);
     }

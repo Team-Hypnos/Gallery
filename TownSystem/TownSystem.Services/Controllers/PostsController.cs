@@ -2,15 +2,19 @@
 {
     using System.Linq;
     using System.Web.Http;
+    using Microsoft.AspNet.Identity;
     using TownSystem.Common.Constants;
     using TownSystem.Services.Data.Contracts;
     using TownSystem.Services.Models.Post;
     using AutoMapper.QueryableExtensions;
+    using TownSystem.Data.Contracts;
+    using TownSystem.Models;
+    using System;
 
     public class PostsController : ApiController
     {
         private readonly IPostsService posts;
-
+  
         public PostsController(IPostsService posts)
         {
             this.posts = posts;
@@ -57,16 +61,16 @@
             {
                 return this.BadRequest(this.ModelState);
             }
-
+                      
             var createdPostId = this.posts.Add(
                 model.Title,
                 model.Description,
-                model.DateCreated,
-                this.User.Identity.Name,
+                DateTime.Now,
+                this.User.Identity.GetUserId(),
                 model.TownId,
                 model.IsDeleted);
 
-            return this.Ok();
+            return this.Ok(createdPostId);
         }
 
         // POST(authorize) api/posts/{postID}/comments -> create new comment for selected post        

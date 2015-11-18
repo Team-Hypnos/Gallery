@@ -77,6 +77,15 @@
 
         public int SaveChanges()
         {
+            try
+            {
+                this.Context.SaveChanges();
+            }
+            catch (Exception ex )
+            {
+
+               
+            }
             return this.Context.SaveChanges();
         }
 

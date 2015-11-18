@@ -71,9 +71,9 @@
                 Title = title,
                 Description = description,
                 DateCreated = dateCreated,
-                IsDeleted = isDeleted,              
                 UserId = userId,
-                TownId = townId
+                TownId = townId,
+                IsDeleted = isDeleted
             };
 
             this.posts.Add(newPost);
@@ -82,25 +82,25 @@
             return newPost.Id;
         }
 
-        public Post Edit(int id, string title, string description, string userId, int townId, bool isDeleted)
-        {
-            var editedPost = this.posts
-                .All()
-                .Where(p => p.Id == id && p.UserId == userId && p.TownId == townId)
-                .FirstOrDefault();
+        //public Post Edit(int id, string title, string description, string userId, int townId, bool isDeleted)
+        //{
+        //    var editedPost = this.posts
+        //        .All()
+        //        .Where(p => p.Id == id && p.UserId == userId && p.TownId == townId)
+        //        .FirstOrDefault();
 
-            if (editedPost == null)
-            {
-                return null;
-            }
+        //    if (editedPost == null)
+        //    {
+        //        return null;
+        //    }
 
-            editedPost.Title = title;
-            editedPost.Description = description;
-            editedPost.IsDeleted = isDeleted;
+        //    editedPost.Title = title;
+        //    editedPost.Description = description;
+        //    editedPost.IsDeleted = isDeleted;
 
-            this.posts.SaveChanges();
-            return editedPost;
-        }
+        //    this.posts.SaveChanges();
+        //    return editedPost;
+        //}
 
         public void Delete(int id)
         {
