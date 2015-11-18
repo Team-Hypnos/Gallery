@@ -222,6 +222,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\PicturesController.cs" />
     <Compile Include="Controllers\TownsController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -244,6 +245,7 @@
     <Compile Include="Models\Category\CategoryDetailsResponseModel.cs" />
     <Compile Include="Models\Comment\CommentDetailsResponseModel.cs" />
     <Compile Include="Models\Comment\CommentDetalsRequestModel.cs" />
+    <Compile Include="Models\Picture\PictureDetailsRequestModel.cs" />
     <Compile Include="Models\Town\TownDetailsRequestModel.cs" />
     <Compile Include="Models\Town\TownDetailsResponseModel.cs" />
     <Compile Include="Models\Post\PostDetailsRequestModel.cs" />
