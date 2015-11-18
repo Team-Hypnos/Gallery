@@ -48,6 +48,10 @@
             return this.comments.All().Where(c => c.Id == id && !c.IsDeleted);
         }
 
+        public IQueryable<Comment> ByIdDeleted(int id)
+        {
+            return this.comments.All().Where(c => c.Id == id);
+        }
 
         public Comment Edit(int id, string content,  string userName)
         {

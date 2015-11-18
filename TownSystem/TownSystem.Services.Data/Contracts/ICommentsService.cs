@@ -10,6 +10,8 @@
 
         IQueryable<Comment> ById(int id);
 
+        IQueryable<Comment> ByIdDeleted(int id);
+
         IQueryable<Comment> PostComments(int postId);
 
         IQueryable<Comment> UserComments(string userId);

@@ -68,7 +68,7 @@
         {
             var comment = this.comments.Delete(model.Id, model.UserName);
             var result = this.comments
-                .ById(comment.Id)
+                .ByIdDeleted(comment.Id)
                 .ProjectTo<CommentDetailsResponseModel>()
                 .FirstOrDefault();
 
