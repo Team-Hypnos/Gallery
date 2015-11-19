@@ -86,7 +86,6 @@
             return postsService.Object;
         }
 
-<<<<<<< HEAD
         public static CategoryDetailsResponseModel GetValidCategoryModel()
         {
             return new CategoryDetailsResponseModel { Name = "Valid category" };
@@ -97,10 +96,7 @@
             return new CategoryDetailsResponseModel { Name = "c" };
         }
 
-        public static CommentDetalsRequestModel GetInvalidModel()
-=======
         public static CommentDetailsRequestModel GetInvalidModel()
->>>>>>> 7c36b736744030c54e1d50275a9627f8cc192d61
         {
             return new CommentDetailsRequestModel { Content = "invalid test model" };
         }
