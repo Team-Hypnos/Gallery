@@ -6,18 +6,20 @@
     using Infrastructure.Mapping;
     using TownSystem.Models;
 
-    public class CommentDetalsRequestModel : IMapFrom<Comment>, IHaveCustomMappings
+    public class CommentDetailsRequestModel : IMapFrom<Comment>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
         [MinLength(ValidationConstants.NameMinLength)]
         [MaxLength(ValidationConstants.NameMaxLength)]
+
         public string Content { get; set; }
 
-        public int? PostId { get; set; }
-        
+        public int PostId { get; set; }
+
         [Required]
         public string UserName { get; set; }
+
 
         public void CreateMappings(IConfiguration configuration)
         {

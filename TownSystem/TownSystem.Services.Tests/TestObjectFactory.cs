@@ -59,7 +59,7 @@
         public static ICommentsService GetCommentsService()
         {
             var commentsService = new Mock<ICommentsService>();
-            commentsService.Setup(c => c.Add(It.IsAny<int?>(), It.IsAny<string>(), It.IsAny<string>())).Returns(new Comment() { Id = 1 });
+            commentsService.Setup(c => c.Add(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<string>())).Returns(new Comment() { Id = 1 });
 
             return commentsService.Object;
         }
@@ -86,6 +86,7 @@
             return postsService.Object;
         }
 
+<<<<<<< HEAD
         public static CategoryDetailsResponseModel GetValidCategoryModel()
         {
             return new CategoryDetailsResponseModel { Name = "Valid category" };
@@ -97,8 +98,11 @@
         }
 
         public static CommentDetalsRequestModel GetInvalidModel()
+=======
+        public static CommentDetailsRequestModel GetInvalidModel()
+>>>>>>> 7c36b736744030c54e1d50275a9627f8cc192d61
         {
-            return new CommentDetalsRequestModel { Content = "invalid test model" };
+            return new CommentDetailsRequestModel { Content = "invalid test model" };
         }
 
         public static TownDetailsRequestModel GetValidTownModel()

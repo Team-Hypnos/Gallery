@@ -17,7 +17,7 @@
             this.users = usersRepo;
         }
 
-        public Comment Add(int? id, string content, string userName)
+        public Comment Add(int id, string content, string userName)
         {
             var userId = this.users.UserIdByUsername(userName);
 

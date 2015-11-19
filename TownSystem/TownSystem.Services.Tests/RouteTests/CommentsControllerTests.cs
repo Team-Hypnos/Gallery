@@ -26,7 +26,7 @@
                 .ShouldMap("/api/Comments")
                 .WithHttpMethod(HttpMethod.Post)
                 .WithJsonContent(@"{""Content"": ""Test"", ""UserName"" : ""TestUser""}")
-                .To<CommentsController>(c => c.Post(new CommentDetalsRequestModel
+                .To<CommentsController>(c => c.Post(new CommentDetailsRequestModel
                 {
                     Content = "Test",
                     UserName = "TestUser"
