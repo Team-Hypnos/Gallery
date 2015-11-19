@@ -5,6 +5,8 @@
 
     public static class WebApiConfig
     {
+        public static HttpConfiguration Config { get; private set; }
+
         public static void Register(HttpConfiguration config)
         {
             config.SuppressDefaultHostAuthentication();
@@ -19,6 +21,8 @@
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional });
+
+            Config = config;
         }
     }
 }
