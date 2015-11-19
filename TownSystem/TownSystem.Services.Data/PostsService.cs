@@ -64,7 +64,21 @@
                 .Take(pageSize);
         }
 
-        public int AddCommnet(int postId, string content, DateTime timePosted, string userId, bool isDeleted)
+        public IQueryable<Post> GetByTownName(string townName)
+        {
+            return this.posts
+                .All()
+                .Where(p => !p.IsDeleted && p.Town.Name == townName);
+        }
+
+        public IQueryable<IGrouping<string, Post>> GroupByTownName()
+        {
+            return this.posts
+                .All()
+                .GroupBy(p => p.Town.Name);
+        }
+
+        public Post AddCommnet(int postId, string content, DateTime timePosted, string userId, bool isDeleted)
         {
             var post = this.posts.GetById(postId);
             var newComment = new Comment
@@ -79,10 +93,10 @@
             post.Comments.Add(newComment);
             this.posts.SaveChanges();
 
-            return post.Id;
+            return post;
         }
 
-        public int Add(string title, string description, DateTime dateCreated, string userId, int townId, bool isDeleted = false)
+        public Post Add(string title, string description, DateTime dateCreated, string userId, int townId, bool isDeleted = false)
         {
             var newPost = new Post
             {
@@ -97,7 +111,7 @@
             this.posts.Add(newPost);
             this.posts.SaveChanges();
 
-            return newPost.Id;
+            return newPost;
         }
 
         public Post Edit(int id, string title, string description, string userId, int townId, bool isDeleted)

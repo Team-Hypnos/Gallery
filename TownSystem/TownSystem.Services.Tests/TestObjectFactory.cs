@@ -77,7 +77,7 @@
             return postsService.Object;
         }
 
-        public static CommentDetalsRequestModel GetInvalidModel()
+        public static CommentDetailsRequestModel GetInvalidModel()
         {
             return new CommentDetailsRequestModel { Content = "invalid test model" };
         }
