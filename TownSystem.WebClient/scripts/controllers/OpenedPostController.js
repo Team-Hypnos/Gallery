@@ -52,7 +52,7 @@ galleryApp.controller('OpenedPostController', function OpenedPostController($sco
                 profilePicture: localStorage.getItem('profilePicture') // need to be changed
             }
         };
-        
+
         if (typeof($scope.commentContent) !== 'undefined') {
             addComment.addNewComment(commentObj)
                 .then(function () {
