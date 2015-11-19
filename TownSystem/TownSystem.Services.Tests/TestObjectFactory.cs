@@ -50,7 +50,7 @@
         public static ICommentsService GetCommentsService()
         {
             var commentsService = new Mock<ICommentsService>();
-            commentsService.Setup(c => c.Add(It.IsAny<int?>(), It.IsAny<string>(), It.IsAny<string>())).Returns(new Comment() { Id = 1 });
+            commentsService.Setup(c => c.Add(It.IsAny<int>(), It.IsAny<string>(), It.IsAny<string>())).Returns(new Comment() { Id = 1 });
 
             return commentsService.Object;
         }
