@@ -7,6 +7,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using Services.Models.Town;
+    using System;
 
     public static class TestObjectFactory
     {
@@ -21,6 +22,28 @@
             {
                 Id = 2,
                 Name = "pLOVEdiv"
+            }
+        }.AsQueryable();
+
+        private static IQueryable<Post> posts = new List<Post>
+        {
+            new Post
+            {
+                Title = "Some post",
+                Description = "Some description",
+                Id = 1,
+                IsDeleted = false,
+                DateCreated = DateTime.Now,
+                UserId = "1"
+            },
+            new Post
+            {
+                Title = "Other post",
+                Description = "Other description",
+                Id = 2,
+                IsDeleted = false,
+                DateCreated = DateTime.Now,
+                UserId = "2"
             }
         }.AsQueryable();
 
@@ -40,6 +63,18 @@
             townsService.Setup(t => t.ById(It.IsAny<int>())).Returns(towns);
 
             return townsService.Object;
+        }
+
+        public static IPostsService GetPostsService()
+        {
+            var postsService = new Mock<IPostsService>();
+            postsService.Setup(p => p.LatestPosts()).Returns(new List<Post>().AsQueryable());
+
+            postsService.Setup(p => p.All(It.IsAny<int>(), It.IsAny<int>())).Returns(new List<Post>().AsQueryable());
+
+            postsService.Setup(p => p.PostById(It.IsAny<int>())).Returns(posts);
+
+            return postsService.Object;
         }
 
         public static CommentDetalsRequestModel GetInvalidModel()

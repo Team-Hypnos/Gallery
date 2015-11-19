@@ -24,7 +24,7 @@
         }
 
         [TestMethod]
-        public void GetShouldReturnOkResult()
+        public void TownsGetShouldReturnOkResult()
         {
             var controller = new TownsController(this.townService);
 
@@ -36,7 +36,7 @@
         }
 
         [TestMethod]
-        public void GetByIdShouldReturnOkResult()
+        public void TownsGetByIdShouldReturnOkResult()
         {
             var controller = new TownsController(this.townService);
 
@@ -48,7 +48,7 @@
         }
 
         [TestMethod]
-        public void GetWithPageAndPageSizeShouldReturnOkResult()
+        public void TownsGetWithPageAndPageSizeShouldReturnOkResult()
         {
             var controller = new TownsController(this.townService);
 
@@ -60,7 +60,7 @@
         }
 
         [TestMethod]
-        public void PostShouldReturnOkResult()
+        public void TownsPostShouldReturnOkResult()
         {
             MyWebApi
                 .Controller<TownsController>()
@@ -71,7 +71,7 @@
         }
 
         [TestMethod]
-        public void PostWithInvalidShouldReturnBadRequestResult()
+        public void TownsPostWithInvalidShouldReturnBadRequestResult()
         {
             MyWebApi
                 .Controller<TownsController>()
