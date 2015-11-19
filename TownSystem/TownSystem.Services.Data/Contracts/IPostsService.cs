@@ -17,9 +17,11 @@
 
         IQueryable<Post> All(int page = 1, int pageSize = GlobalConstants.DefaultPageSize);
 
-        int AddCommnet(int postId, string content, DateTime timePosted, string userId, bool isDeleted);
+        IQueryable<Post> GetByTownName(string townName);
 
-        int Add(string title, string description, DateTime dateCreated, string userId, int townId, bool isDeleted);
+        Post AddCommnet(int postId, string content, DateTime timePosted, string userId, bool isDeleted);
+
+        Post Add(string title, string description, DateTime dateCreated, string userId, int townId, bool isDeleted);
 
         Post Edit(int id, string title, string description, string userId, int townId, bool isDeleted);
 

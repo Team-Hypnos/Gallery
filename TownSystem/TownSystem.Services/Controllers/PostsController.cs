@@ -51,7 +51,19 @@
                 .ProjectTo<PostDetailsResponseModel>()
                 .ToList();
 
-            return this.Ok();
+            return this.Ok(result);
+        }
+
+        // GET(public) api/posts?town=Name
+
+        public IHttpActionResult Get(string town)
+        {
+            var result = this.posts
+                .GetByTownName(town)
+                .ProjectTo<PostDetailsResponseModel>()
+                .ToList();
+
+            return this.Ok(result);
         }
         
         // POST(authorize) api/posts
@@ -63,7 +75,7 @@
                 return this.BadRequest(this.ModelState);
             }
                       
-            var createdPostId = this.posts.Add(
+            var createdPost = this.posts.Add(
                 model.Title,
                 model.Description,
                 DateTime.Now,
@@ -71,10 +83,10 @@
                 model.TownId,
                 model.IsDeleted);
 
-            return this.Ok(createdPostId);
+            return this.Created(string.Format("api/posts{0}", createdPost.Id ), createdPost);
         }
 
-        // POST(authorize) api/posts/{postID}/comments -> create new comment for selected post 
+        // POST(authorize) api/posts/{id}/comment -> create new comment for selected post 
         
         [HttpPost]
         [Route("api/posts/{id}/comment")]
@@ -91,5 +103,12 @@
 
             return this.Ok(createdComment);
         }
+
+        // POST(authorize) api/post/{id}/like -> like for selected post
+        //[HttpPut]
+        //[Route("api/posts/{id}/like")]
+        //[Authorize]
+
+        //public IHttpActionResult Put(int id, )
     }
 }
