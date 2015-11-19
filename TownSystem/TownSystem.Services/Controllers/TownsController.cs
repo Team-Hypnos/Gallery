@@ -60,7 +60,7 @@
             return this.Ok(result);
         }
 
-        [Authorize]
+      //  [Authorize]
         [HttpPost]
         public IHttpActionResult Post(TownDetailsRequestModel model)
         {

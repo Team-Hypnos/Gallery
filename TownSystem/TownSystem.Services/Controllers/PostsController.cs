@@ -68,7 +68,7 @@
         }
         
         // POST(authorize) api/posts
-        [Authorize]
+      //  [Authorize]
         public IHttpActionResult Post(PostDetailsRequestModel model)
         {
             if (!this.ModelState.IsValid)
@@ -91,7 +91,7 @@
         
         [HttpPost]
         [Route("api/posts/{id}/comment")]
-        [Authorize]
+     //   [Authorize]
         public IHttpActionResult Post(int id, CommentDetailsRequestModel model)
         {
             if (!this.ModelState.IsValid)

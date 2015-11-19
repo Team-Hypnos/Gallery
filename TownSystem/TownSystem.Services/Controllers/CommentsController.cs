@@ -38,7 +38,7 @@
             return this.Ok(result);
         }
 
-        [Authorize]
+      //  [Authorize]
         public IHttpActionResult Post(CommentDetailsRequestModel model)
         {
             if (!this.ModelState.IsValid)
@@ -56,7 +56,7 @@
             return this.Ok(result);
         }
 
-        [Authorize]
+      //  [Authorize]
         [HttpPut]
         public IHttpActionResult Edit(CommentDetailsRequestModel model)
         {
@@ -70,7 +70,7 @@
             return this.Ok(result);
         }
 
-        [Authorize]
+     //   [Authorize]
         [HttpDelete]
         public IHttpActionResult Delete(CommentDetailsRequestModel model)
         {
