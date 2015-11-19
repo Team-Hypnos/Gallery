@@ -1,6 +1,12 @@
 'use strict';
 
-galleryApp.controller("WallOfFameController", function WallOfFameController($scope){
+galleryApp.controller("WallOfFameController", function WallOfFameController($scope, $location){
+    var isLogged = localStorage.getItem('isLoggedIn');
+
+    if (!isLogged) {
+        $location.path('/signin');
+    }
+
     $scope.best = [
         {
             cityName: 'Kystendil',
