@@ -53,6 +53,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
       <Private>True</Private>
@@ -80,6 +81,7 @@
     <Compile Include="ControllerTests\CommentsControllerTests.cs" />
     <Compile Include="ControllerTests\PostsControllerTests.cs" />
     <Compile Include="ControllerTests\TownsControllerTests.cs" />
+    <Compile Include="IntegrationTests\CommentsIntegrationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteTests\CommentsControllerTests.cs" />
     <Compile Include="TestObjectFactory.cs" />
@@ -92,6 +94,10 @@
     <ProjectReference Include="..\TownSystem.Common\TownSystem.Common.csproj">
       <Project>{faaa9a08-14a8-4470-943b-fc0d4a78d996}</Project>
       <Name>TownSystem.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TownSystem.Data\TownSystem.Data.csproj">
+      <Project>{f5e641a1-55b0-4faf-bbd2-ec98d20572e7}</Project>
+      <Name>TownSystem.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\TownSystem.Models\TownSystem.Models.csproj">
       <Project>{78fd5502-e904-4ba0-9dac-d4c2d0a0d223}</Project>
@@ -106,6 +112,7 @@
       <Name>TownSystem.Services</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

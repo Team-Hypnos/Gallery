@@ -42,6 +42,14 @@
                 .To<CommentsController>(c => c.Get());
         }
 
+        [TestMethod]
+        public void ControllerGetWithPostIdShouldMapCorrectly()
+        {
+            MyWebApi
+                .Routes()
+                .ShouldMap("api/Comments/ByPost/1")
+                .To<CommentsController>(c => c.GetByPostId(1));
+        }
 
         [TestMethod]
         public void ControllerRouteIsResolvedWIthInvalidModelState()
