@@ -76,6 +76,7 @@
     <Compile Include="ControllerTests\CommentsControllerTests.cs" />
     <Compile Include="ControllerTests\TownsControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RouteTests\CommentsControllerTests.cs" />
     <Compile Include="TestObjectFactory.cs" />
   </ItemGroup>
   <ItemGroup>
