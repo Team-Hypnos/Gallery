@@ -476,3 +476,7 @@ hr.style-two {
 .me-self-message{
     font-weight: normal;
 }
+
+#facebook-container {
+    margin-top: -2px;
+}

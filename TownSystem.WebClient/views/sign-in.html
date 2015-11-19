@@ -1,5 +1,6 @@
 <div class="container center-block" ng-cloak>
     <br/>
+
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
             <div id="login-user-container" class="panel panel-primary" ng-controller="SignInController">
@@ -28,10 +29,13 @@
                 </div>
                 <div class="panel-footer">
                     <div class="row">
-                        <div class="col-xs-9 col-sm-9 col-md-9 fb-login-button" data-max-rows="5"
-                             data-size="small" data-show-faces="true" data-auto-logout-link="true"
-                                onload="checkLoginState()">
-                        </div>
+                        <fb:login-button class="col-xs-2 col-sm-2 col-md-2 fb-login-button" data-max-rows="5"
+                                         data-size="small" data-show-faces="true" data-auto-logout-link="true">
+                        </fb:login-button>
+                        <a id="facebook-container" class="col-xs-7 col-sm-7 col-md-7 btn btn-xs  btn-social btn-facebook">
+                            <span class="fa fa-facebook-square"></span>
+                            Click to refresh after login
+                        </a>
                         <div class="col-xs-3 col-sm-3 col-md-3">
                             <button type="button" class="btn btn-labeled btn-success"
                                     ng-disabled="signInForm.$pristine || signInForm.$invalid"
@@ -63,6 +67,7 @@
 
     // This function is called when someone finishes with the Login Button.
     function checkLoginState() {
+        console.log('Check login state!!!!!!!!!!!!!!!!!!!!!!!');
         FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         });
@@ -104,7 +109,7 @@
             var index = url.lastIndexOf('#');
             var newUrl = url.substring(0, index + 1) + '/home';
 
-            if (window.location.href !== newUrl){
+            if (window.location.href !== newUrl) {
                 window.location.reload();
             }
 
@@ -112,12 +117,17 @@
         });
     }
 
+    var loginButton = document.getElementById('facebook-container');
+    loginButton.onclick = function () {
+        window.location.reload();
+    };
+
     // Logout user
     var signOutButton = document.getElementById('signOut-button');
-    signOutButton.onclick = function facebookLogout(){
-        FB.getLoginStatus(function(response) {
+    signOutButton.onclick = function facebookLogout() {
+        FB.getLoginStatus(function (response) {
             if (response.status === 'connected') {
-                FB.logout(function(response) {
+                FB.logout(function (response) {
                     localStorage.clear();
                     window.location.reload();
                 });

@@ -23,6 +23,7 @@
     "bootstrap": "~3.3.5",
     "jquery": "~2.1.4",
     "pubnub-angular": "~1.1.0",
-    "toastr": "~2.1.2"
+    "toastr": "~2.1.2",
+    "bootstrap-social": "~4.10.1"
   }
 }
