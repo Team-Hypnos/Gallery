@@ -26,7 +26,7 @@
                 .All()
                 .Where(p => !p.IsDeleted)
                 .OrderByDescending(p => p.DateCreated)
-                .Take(GlobalConstants.HomePagePostsCount);             
+                .Take(GlobalConstants.HomePagePostsCount);
         }
 
         public IQueryable<Post> MostPopular()
@@ -64,6 +64,24 @@
                 .Take(pageSize);
         }
 
+        public int AddCommnet(int postId, string content, DateTime timePosted, string userId, bool isDeleted)
+        {
+            var post = this.posts.GetById(postId);
+            var newComment = new Comment
+            {
+                PostId = postId,
+                Content = content,
+                TimePosted = timePosted,
+                UserId = userId,
+                IsDeleted = isDeleted
+            };
+
+            post.Comments.Add(newComment);
+            this.posts.SaveChanges();
+
+            return post.Id;
+        }
+
         public int Add(string title, string description, DateTime dateCreated, string userId, int townId, bool isDeleted = false)
         {
             var newPost = new Post
@@ -82,25 +100,25 @@
             return newPost.Id;
         }
 
-        //public Post Edit(int id, string title, string description, string userId, int townId, bool isDeleted)
-        //{
-        //    var editedPost = this.posts
-        //        .All()
-        //        .Where(p => p.Id == id && p.UserId == userId && p.TownId == townId)
-        //        .FirstOrDefault();
+        public Post Edit(int id, string title, string description, string userId, int townId, bool isDeleted)
+        {
+            var editedPost = this.posts
+                .All()
+                .Where(p => p.Id == id && p.UserId == userId && p.TownId == townId)
+                .FirstOrDefault();
 
-        //    if (editedPost == null)
-        //    {
-        //        return null;
-        //    }
+            if (editedPost == null)
+            {
+                return null;
+            }
 
-        //    editedPost.Title = title;
-        //    editedPost.Description = description;
-        //    editedPost.IsDeleted = isDeleted;
+            editedPost.Title = title;
+            editedPost.Description = description;
+            editedPost.IsDeleted = isDeleted;
 
-        //    this.posts.SaveChanges();
-        //    return editedPost;
-        //}
+            this.posts.SaveChanges();
+            return editedPost;
+        }
 
         public void Delete(int id)
         {

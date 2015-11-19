@@ -6,6 +6,7 @@
     using System.Linq;
     using System.Web;
     using TownSystem.Common.Constants;
+using TownSystem.Services.Models.Comment;
 
     public class PostDetailsRequestModel
     {
@@ -27,5 +28,7 @@
         public string UserId { get; set; }
 
         public int TownId { get; set; }
+
+        public ICollection<CommentDetailsRequestModel> Comment { get; set; }
     }
 }

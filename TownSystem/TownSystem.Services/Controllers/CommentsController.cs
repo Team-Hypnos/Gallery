@@ -36,7 +36,7 @@
         }
 
         [Authorize]
-        public IHttpActionResult Post(CommentDetalsRequestModel model)
+        public IHttpActionResult Post(CommentDetailsRequestModel model)
         {
             if (!this.ModelState.IsValid)
             {
@@ -55,7 +55,7 @@
 
         [Authorize]
         [HttpPut]
-        public IHttpActionResult Edit(CommentDetalsRequestModel model)
+        public IHttpActionResult Edit(CommentDetailsRequestModel model)
         {
             var comment = this.comments.Edit(model.Id, model.Content, model.UserName);
 
@@ -69,7 +69,7 @@
 
         [Authorize]
         [HttpDelete]
-        public IHttpActionResult Delete(CommentDetalsRequestModel model)
+        public IHttpActionResult Delete(CommentDetailsRequestModel model)
         {
             var comment = this.comments.Delete(model.Id, model.UserName);
             var result = this.comments

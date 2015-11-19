@@ -10,6 +10,7 @@
     using TownSystem.Data.Contracts;
     using TownSystem.Models;
     using System;
+    using TownSystem.Services.Models.Comment;
 
     public class PostsController : ApiController
     {
@@ -73,6 +74,22 @@
             return this.Ok(createdPostId);
         }
 
-        // POST(authorize) api/posts/{postID}/comments -> create new comment for selected post        
+        // POST(authorize) api/posts/{postID}/comments -> create new comment for selected post 
+        
+        [HttpPost]
+        [Route("api/posts/{id}/comment")]
+        [Authorize]
+        public IHttpActionResult Post(int id, CommentDetailsRequestModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+
+            var createdComment = this.posts
+                .AddCommnet(id, model.Content, DateTime.Now, this.User.Identity.GetUserId(), false);
+
+            return this.Ok(createdComment);
+        }
     }
 }

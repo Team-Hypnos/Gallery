@@ -15,9 +15,9 @@
             return commentsService.Object;
         }
 
-        public static CommentDetalsRequestModel GetInvalidModel()
+        public static CommentDetailsRequestModel GetInvalidModel()
         {
-            return new CommentDetalsRequestModel { Content = "invalid test model" };
+            return new CommentDetailsRequestModel { Content = "invalid test model" };
         }
     }
 }

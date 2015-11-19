@@ -29,6 +29,8 @@
 
         public bool IsLiked { get; set; }
 
+        public string Picture { get; set; }
+
         public string ShortDate
         {
             get
@@ -59,7 +61,8 @@
                 .ForMember(p => p.UserName, opt => opt.MapFrom(p => p.User.UserName))
                 .ForMember(p => p.Likes, opt => opt.MapFrom(p => p.Likes.Count))
                 .ForMember(p => p.Comments, opt => opt.MapFrom(p => p.Comments.Count))
-                .ForMember(p => p.IsLiked, opt => opt.MapFrom(p => p.Likes.Any(l => l.User.UserName == username)));
+                .ForMember(p => p.IsLiked, opt => opt.MapFrom(p => p.Likes.Any(l => l.User.UserName == username)))
+                .ForMember(p => p.Picture, opt => opt.MapFrom(p => p.Town.Picture.FilePath));
         }
     }
 }
