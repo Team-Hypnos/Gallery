@@ -6,6 +6,7 @@
     using AutoMapper.QueryableExtensions;
     using Models.Comment;
 
+    [RoutePrefix("api/comments")]
     public class CommentsController : ApiController
     {
         private readonly ICommentsService comments;
@@ -25,10 +26,12 @@
             return this.Ok(result);
         }
 
-        public IHttpActionResult Get(int postId)
+        [Route("bypost/{id}")]
+        [HttpGet]
+        public IHttpActionResult GetByPostId(int id)
         {
             var result = this.comments
-                .PostComments(postId)
+                .PostComments(id)
                 .ProjectTo<CommentDetailsResponseModel>()
                 .ToList();
 
