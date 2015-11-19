@@ -19,7 +19,7 @@
                 <li>
                     <a href="#/categories" class="hvr-underline-from-center">Categories</a>
                 </li>
-                <li>
+                <li ng-show="isLoggedIn">
                     <a href="#/wall-of-fame" class="hvr-underline-from-center">Wall of Fame</a>
                 </li>
                 <li ng-show="isLoggedIn">
@@ -41,7 +41,7 @@
                     <a href="#/profile/{{ username }}" class="hvr-underline-from-center">Hello, {{ username }}</a>
                 </li>
                 <li>
-                    <a class="hvr-underline-from-center" ng-click="signOut()">Sign out</a>
+                    <a id="signOut-button" class="hvr-underline-from-center" ng-click="signOut()">Sign out</a>
                 </li>
             </ul>
         </div>

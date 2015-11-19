@@ -1,5 +1,6 @@
 <div class="container center-block" ng-cloak>
     <br/>
+
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
             <div id="login-user-container" class="panel panel-primary" ng-controller="SignInController">
@@ -11,12 +12,16 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 login-box">
                             <form role="form" name="signInForm">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                    <input type="text" class="form-control" placeholder="Username" required autofocus ng-model="username"/>
+                                    <span class="input-group-addon"><span
+                                            class="glyphicon glyphicon-user"></span></span>
+                                    <input type="text" class="form-control" placeholder="Username" required autofocus
+                                           ng-model="username"/>
                                 </div>
                                 <div class="input-group">
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                    <input type="password" class="form-control" placeholder="Password" required ng-model="password"/>
+                                    <span class="input-group-addon"><span
+                                            class="glyphicon glyphicon-lock"></span></span>
+                                    <input type="password" class="form-control" placeholder="Password" required
+                                           ng-model="password"/>
                                 </div>
                             </form>
                         </div>
@@ -24,19 +29,19 @@
                 </div>
                 <div class="panel-footer">
                     <div class="row">
-                        <div class="col-xs-9 col-sm-9 col-md-9">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="Remember"/>
-                                    Remember me
-                                </label>
-                            </div>
-                        </div>
+                        <fb:login-button class="col-xs-2 col-sm-2 col-md-2 fb-login-button" data-max-rows="5"
+                                         data-size="small" data-show-faces="true" data-auto-logout-link="true">
+                        </fb:login-button>
+                        <a id="facebook-container" class="col-xs-7 col-sm-7 col-md-7 btn btn-xs  btn-social btn-facebook">
+                            <span class="fa fa-facebook-square"></span>
+                            Click to refresh after login
+                        </a>
                         <div class="col-xs-3 col-sm-3 col-md-3">
                             <button type="button" class="btn btn-labeled btn-success"
                                     ng-disabled="signInForm.$pristine || signInForm.$invalid"
                                     ng-click="signIn(username, password)">
-                                <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Sign In</button>
+                                <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Sign In
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -44,3 +49,89 @@
         </div>
     </div>
 </div>
+
+<div id="fb-root"></div>
+<script>
+    // This is called with the results from from FB.getLoginStatus().
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        if (response.status === 'connected') {
+            setUserData();
+        } else if (response.status === 'not_authorized') {
+            document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
+        } else {
+            document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
+        }
+    }
+
+    // This function is called when someone finishes with the Login Button.
+    function checkLoginState() {
+        console.log('Check login state!!!!!!!!!!!!!!!!!!!!!!!');
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+        });
+        window.location.reload();
+    }
+
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '768604839929508',
+            cookie: true,
+            xfbml: true,
+            version: 'v2.2'
+        });
+
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+        });
+    };
+
+    // Load the SDK asynchronously
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Sets the user data to localStorage
+    function setUserData() {
+        toastr.info('Please, wait a moment till we process your data. You can try to refresh. Thank you! :)')
+
+        FB.api('/me?fields=id,name,email', function (response) {
+            localStorage.setItem('username', response.name);
+            localStorage.setItem('isLoggedIn', true);
+            localStorage.setItem('profilePicture', 'http://graph.facebook.com/' + response.id + '/picture?type=large');
+            var url = window.location.href;
+            var index = url.lastIndexOf('#');
+            var newUrl = url.substring(0, index + 1) + '/home';
+
+            //if (window.location.href !== newUrl) {
+            //    window.location.reload();
+            //}
+
+            //window.location = newUrl;
+        });
+    }
+
+    var loginButton = document.getElementById('facebook-container');
+    loginButton.onclick = function () {
+        window.location.reload();
+    };
+
+    // Logout user
+    var signOutButton = document.getElementById('signOut-button');
+    signOutButton.onclick = function facebookLogout() {
+        FB.getLoginStatus(function (response) {
+            if (response.status === 'connected') {
+                FB.logout(function (response) {
+                    localStorage.clear();
+                    window.location.reload();
+                });
+            }
+        });
+    }
+</script>
