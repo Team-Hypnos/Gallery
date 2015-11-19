@@ -9,6 +9,7 @@
     using Services;
     using Common.Constants;
     using System.Reflection;
+    using MyTested.WebApi;
 
     [TestClass]
     public class TownsControllerTests
@@ -32,6 +33,52 @@
             var okResult = result as OkNegotiatedContentResult<List<TownDetailsResponseModel>>;
 
             Assert.IsNotNull(okResult);
+        }
+
+        [TestMethod]
+        public void GetByIdShouldReturnOkResult()
+        {
+            var controller = new TownsController(this.townService);
+
+            var result = controller.Get(1);
+
+            var okResult = result as OkNegotiatedContentResult<TownDetailsResponseModel>;
+
+            Assert.IsNotNull(okResult);
+        }
+
+        [TestMethod]
+        public void GetWithPageAndPageSizeShouldReturnOkResult()
+        {
+            var controller = new TownsController(this.townService);
+
+            var result = controller.Get(1, 10);
+
+            var okResult = result as OkNegotiatedContentResult<List<TownDetailsResponseModel>>;
+
+            Assert.IsNotNull(okResult);
+        }
+
+        [TestMethod]
+        public void PostShouldReturnOkResult()
+        {
+            MyWebApi
+                .Controller<TownsController>()
+                .WithResolvedDependencyFor(this.townService)
+                .Calling(c => c.Post(TestObjectFactory.GetValidTownModel()))
+                .ShouldHave()
+                .ValidModelState();
+        }
+
+        [TestMethod]
+        public void PostWithInvalidShouldReturnBadRequestResult()
+        {
+            MyWebApi
+                .Controller<TownsController>()
+                .WithResolvedDependencyFor(this.townService)
+                .Calling(c => c.Post(TestObjectFactory.GetInvalidTownModel()))
+                .ShouldHave()
+                .InvalidModelState();
         }
     }
 }
