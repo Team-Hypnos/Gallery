@@ -8,6 +8,7 @@
     using System.Linq;
     using Services.Models.Town;
     using System;
+    using Services.Models.Category;
 
     public static class TestObjectFactory
     {
@@ -47,6 +48,14 @@
             }
         }.AsQueryable();
 
+        public static ICategoriesService GetCategoriesService()
+        {
+            var categoriesService = new Mock<ICategoriesService>();
+            categoriesService.Setup(c => c.Add(It.IsAny<string>())).Returns(new Category() { Name = "Kaspichan" });
+
+            return categoriesService.Object;
+        }
+
         public static ICommentsService GetCommentsService()
         {
             var commentsService = new Mock<ICommentsService>();
@@ -75,6 +84,16 @@
             postsService.Setup(p => p.PostById(It.IsAny<int>())).Returns(posts);
 
             return postsService.Object;
+        }
+
+        public static CategoryDetailsResponseModel GetValidCategoryModel()
+        {
+            return new CategoryDetailsResponseModel { Name = "Valid category" };
+        }
+
+        public static CategoryDetailsResponseModel GetInvalidCategoryModel()
+        {
+            return new CategoryDetailsResponseModel { Name = "c" };
         }
 
         public static CommentDetalsRequestModel GetInvalidModel()

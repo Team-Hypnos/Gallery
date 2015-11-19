@@ -29,7 +29,7 @@
             return this.Ok(result);
         }
         
-        [Route("{id}")]
+        [EnableCors("*", "*", "*")]
         [HttpGet]
         public IHttpActionResult GetById(string id)
         {
@@ -51,7 +51,7 @@
             return this.Ok(result);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IHttpActionResult Post(CategoryDetailsResponseModel model)
         {
