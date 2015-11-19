@@ -16,7 +16,7 @@
 
         IQueryable<Comment> UserComments(string userId);
 
-        Comment Add(int? id, string content, string userId);
+        Comment Add(int id, string content, string userId);
 
         Comment Edit(int id, string content, string userId);
 

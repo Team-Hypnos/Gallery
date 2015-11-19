@@ -19,6 +19,7 @@
         }
 
         [EnableCors("*", "*", "*")]
+        [HttpGet]
         public IHttpActionResult Get()
         {
             var result = this.towns
@@ -28,7 +29,9 @@
 
             return this.Ok(result);
         }
-        
+
+        [EnableCors("*", "*", "*")]
+        [HttpGet]
         public IHttpActionResult Get(int id)
         {
             var result = this.towns
@@ -45,6 +48,8 @@
         }
 
         [Route("all")]
+        [EnableCors("*", "*", "*")]
+        [HttpGet]
         public IHttpActionResult Get(int page, int pageSize = GlobalConstants.DefaultPageSize)
         {
             var result = this.towns
@@ -56,6 +61,7 @@
         }
 
         [Authorize]
+        [HttpPost]
         public IHttpActionResult Post(TownDetailsRequestModel model)
         {
             if (!this.ModelState.IsValid)

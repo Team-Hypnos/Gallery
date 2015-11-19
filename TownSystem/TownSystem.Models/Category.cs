@@ -4,6 +4,7 @@
     using System.ComponentModel.DataAnnotations;
 
     using Newtonsoft.Json;
+    using Common.Constants;
 
     public class Category
     {
@@ -15,6 +16,8 @@
         public int Id { get; set; }
 
         [Required]
+        [MinLength(ValidationConstants.NameMinLength)]
+        [MaxLength(ValidationConstants.NameMaxLength)]
         public string Name { get; set; }
 
         [JsonIgnore]
