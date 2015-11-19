@@ -2,6 +2,7 @@
 {
     using System.Linq;
     using System.Web.Http;
+    using System.Web.Http.Cors;
     using Microsoft.AspNet.Identity;
     using TownSystem.Common.Constants;
     using TownSystem.Services.Data.Contracts;
@@ -21,6 +22,7 @@
             this.posts = posts;
         }
 
+        [EnableCors("*", "*", "*")]
         // Get(public) api/posts
         public IHttpActionResult Get()
         {
@@ -31,7 +33,6 @@
 
             return this.Ok(result);
         }
-
         // GET(public) api/posts{postId}
         public IHttpActionResult Get(int id)
         {
