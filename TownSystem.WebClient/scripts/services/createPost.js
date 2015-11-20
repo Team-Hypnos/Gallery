@@ -10,13 +10,15 @@ galleryApp.factory('createPost', function ($resource, $q, $http) {
             $http.post(remoteUrl + 'api/posts', {
                     title: postObj.title,
                     description: postObj.description,
-                    townName: postObj.townName,
-                    townCategory: postObj.townCategory,
+                    userId: postObj.userId,
+                    townId: postObj.townId,
+                    isDeleted: postObj.isDeleted,
                     pictureData: postObj.pictureData
                 },
                 {
                     headers: {
-                        'Authorization': localStorage.getItem('access_token')
+                        'Authorization': 'Bearer ' + localStorage.getItem('access_token'),
+                        'Access-Control-Allow-Origin': '*'
                     }
                 }
             )

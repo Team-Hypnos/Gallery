@@ -3,231 +3,239 @@
 galleryApp.controller('AddPostController', function AddPostController($scope, $location, createPost) {
     var isLogged = localStorage.getItem('isLoggedIn');
 
+    // Redirect the user if it is not logged
     if (!isLogged) {
         $location.path('/signin');
     }
 
+    // Provides a collection of all cities
     $scope.townsCollection = [
         {
-            value: 'Aitos',
+            value: 1,
             label: 'Aitos'
         },
         {
-            value: 'Asenovgrad',
+            value: 2,
             label: 'Asenovgrad'
         },
         {
-            value: 'Blagoevgrad',
+            value: 3,
             label: 'Blagoevgrad'
         },
         {
-            value: 'Botevgrad',
+            value: 4,
             label: 'Botevgrad'
         },
         {
-            value: 'Burgas',
+            value: 5,
             label: 'Burgas'
         },
         {
-            value: 'Chirpan',
+            value: 6,
             label: 'Chirpan'
         },
         {
-            value: 'Dobrich',
+            value: 7,
             label: 'Dobrich'
         },
         {
-            value: 'Dupnica',
+            value: 8,
             label: 'Dupnica'
         },
         {
-            value: 'Gabrovo',
+            value: 9,
             label: 'Gabrovo'
         },
         {
-            value: 'Gotse Delchev',
+            value: 10,
             label: 'Gotse Delchev'
         },
         {
-            value: 'Haskovo',
+            value: 11,
             label: 'Haskovo'
         },
         {
-            value: 'Kardzhali',
+            value: 12,
             label: 'Kardzhali'
         },
         {
-            value: 'Karlovo',
+            value: 13,
             label: 'Karlovo'
         },
         {
-            value: 'Karnobat',
+            value: 14,
             label: 'Karnobat'
         },
         {
-            value: 'Kazanlak',
+            value: 15,
             label: 'Kazanlak'
         },
         {
-            value: 'Kyustendil',
+            value: 16,
             label: 'Kyustendil'
         },
         {
-            value: 'Lom',
+            value: 17,
             label: 'Lom'
         },
         {
-            value: 'Lovech',
+            value: 18,
             label: 'Lovech'
         },
         {
-            value: 'Montana',
+            value: 19,
             label: 'Montana'
         },
         {
-            value: 'Nova Zagora',
+            value: 20,
             label: 'Nova Zagora'
         },
         {
-            value: 'Panagurishte',
+            value: 21,
             label: 'Panagurishte'
         },
         {
-            value: 'Pazardzhik',
+            value: 22,
             label: 'Pazardzhik'
         },
         {
-            value: 'Pernik',
+            value: 23,
             label: 'Pernik'
         },
         {
-            value: 'Petrich',
+            value: 24,
             label: 'Petrich'
         },
         {
-            value: 'Pleven',
+            value: 25,
             label: 'Pleven'
         },
         {
-            value: 'Plovdiv',
+            value: 26,
             label: 'Plovdiv'
         },
         {
-            value: 'Razgrad',
+            value: 27,
             label: 'Razgrad'
         },
         {
-            value: 'Ruse',
+            value: 28,
             label: 'Ruse'
         },
         {
-            value: 'Samokov',
+            value: 29,
             label: 'Samokov'
         },
         {
-            value: 'Sandanski',
+            value: 30,
             label: 'Sandanski'
         },
         {
-            value: 'Sevlievo',
+            value: 31,
             label: 'Sevlievo'
         },
         {
-            value: 'Shumen',
+            value: 32,
             label: 'Shumen'
         },
         {
-            value: 'Silistra',
+            value: 33,
             label: 'Silistra'
         },
         {
-            value: 'Sliven',
+            value: 34,
             label: 'Sliven'
         },
         {
-            value: 'Smolian',
+            value: 35,
             label: 'Smolian'
         },
         {
-            value: 'Sofia',
+            value: 36,
             label: 'Sofia'
         },
         {
-            value: 'Stara Zagora',
+            value: 37,
             label: 'Stara Zagora'
         },
         {
-            value: 'Svilengrad',
+            value: 38,
             label: 'Svilengrad'
         },
         {
-            value: 'Troyan',
+            value: 39,
             label: 'Troyan'
         },
         {
-            value: 'Varna',
+            value: 40,
             label: 'Varna'
         },
         {
-            value: 'Veliko Tarnovo',
+            value: 41,
             label: 'Veliko Tarnovo'
         },
         {
-            value: 'Velingrad',
+            value: 42,
             label: 'Velingrad'
         },
         {
-            value: 'Vidin',
+            value: 43,
             label: 'Vidin'
         },
         {
-            value: 'Vratsa',
+            value: 44,
             label: 'Vratsa'
         },
         {
-            value: 'Yambol',
+            value: 45,
             label: 'Yambol'
         }
     ];
+
+    // Provides a collection of all categories
     $scope.categoriesCollection = [
         {
-            value: 'Nature',
+            value: 1,
             label: 'Nature'
         },
         {
-            value: 'Historical monuments',
+            value: 2,
             label: 'Historical monuments'
         },
         {
-            value: 'City life',
+            value: 3,
             label: 'City life'
         },
         {
-            value: 'City culture',
+            value: 4,
             label: 'City culture'
         },
         {
-            value: 'City festivals',
+            value: 5,
             label: 'City festivals'
         }
     ];
 
+    // Creates new post
+    // Sends: title, description, the name of the city, category, picture
     $scope.addNewPost = function () {
         var fileData = new FormData();
-
         var files = $('#image-input').get(0).files;
 
         if (files.length > 0) {
-            fileData.append($scope.postTitle, files[0]);
+            fileData.append('UploadedImage', files[0]);
         }
 
         var post = {
             title: $scope.postTitle,
             description: $scope.postDescription,
-            townName: $scope.townsList.label,
-            townCategory: $scope.categoriesList.label,
+            townId: $scope.townsList.value,
+            userId: localStorage.getItem('username'),
+            isDeleted: false,
             pictureData: fileData
         };
+
+        console.log(post);
 
         createPost.createNewPost(post)
             .then(function () {

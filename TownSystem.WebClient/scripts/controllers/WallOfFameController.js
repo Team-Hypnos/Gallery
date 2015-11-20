@@ -10,23 +10,23 @@ galleryApp.controller("WallOfFameController", function WallOfFameController($sco
     $scope.best = [
         {
             cityName: 'Kystendil',
-            likes: 35,
+            likes: 5,
+            picture: 'http://static1.squarespace.com/static/54a674c9e4b0375c08453705/54d3e872e4b06da65e8a6a1a/54d93539e4b0853cc2aff163/1442931501486/Kyustendil_night.jpg?format=1500w'
+        },
+        {
+            cityName: 'Kystendil',
+            likes: 5,
+            picture: 'http://img.photo-forum.net/site_pics//panorama/1434220762_12.jpg'
+        },
+        {
+            cityName: 'Kystendil',
+            likes: 2,
             picture: 'http://i2.offnews.bg/galleries/21441/20150224_2a38a4a9316c49e5a833517c45d31070_21445.jpg'
         },
         {
-            cityName: 'Varna',
-            likes: 29,
-            picture: 'http://www.doubletreebyhiltonglobalmediacenter.com/assets/HHNR/images/galleries/topwintercities/europe/Varna_2.1.2012_HR.jpg'
-        },
-        {
-            cityName: 'Plovdiv',
-            likes: 27,
-            picture: 'https://drscdn.500px.org/photo/25478259/m%3D2048/0c075d9aaa85d47bceeac03b82b83152'
-        },
-        {
-            cityName: 'Sofia',
-            likes: 23,
-            picture: 'http://birdsphotographer.com/wp-content/uploads/2014/02/sofia-izgrev-sunrise-landscape-peizaj-wwwBirdsPhotographerCom__Nikolay-Staykov-8798.jpg'
+            cityName: 'Burgas',
+            likes: 1,
+            picture: 'http://i64.tinypic.com/2vcxlpd.jpg'
         }
     ];
 

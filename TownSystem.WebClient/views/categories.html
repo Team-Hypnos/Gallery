@@ -30,6 +30,54 @@
             <a class="col-md-2 glyphicon glyphicon-thumbs-up vote" ng-click="voteForPost('historicalMonuments', el.id)"></a>
         </li>
     </ul>
+
+    <!-- City Life -->
+    <div  class="row categories-header">
+        <span class="col-md-12 text-center category-name">City Life  <span class="glyphicon glyphicon-glass"></span></span>
+    </div>
+    <hr class="style-two"/>
+    <ul id="3" class="row category-posts">
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4 category-post-holder" data-toggle="modal" data-target="#lightbox"
+            ng-repeat="el in categories['cityLife']">
+            <span class="col-md-12 name-town">{{ el.town }}</span>
+            <img src="{{ el.picture }}" ng-click="openPost(el.id, el.town)"/>
+            <a class="col-md-8 glyphicon glyphicon-zoom-in text-left icon-left" name="zoom-icon2" id="{{ el.picture }}"></a>
+            <a class="col-md-2 post-likes vote" ng-click="voteForPost('cityLife', el.id)">{{ el.likes }}</a>
+            <a class="col-md-2 glyphicon glyphicon-thumbs-up vote" ng-click="voteForPost('cityLife', el.id)"></a>
+        </li>
+    </ul>
+
+    <!-- City Culture -->
+    <div  class="row categories-header">
+        <span class="col-md-12 text-center category-name">City Culture  <span class="glyphicon glyphicon-grain"></span></span>
+    </div>
+    <hr class="style-two"/>
+    <ul id="4" class="row category-posts">
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4 category-post-holder" data-toggle="modal" data-target="#lightbox"
+            ng-repeat="el in categories['cityCulture']">
+            <span class="col-md-12 name-town">{{ el.town }}</span>
+            <img src="{{ el.picture }}" ng-click="openPost(el.id, el.town)"/>
+            <a class="col-md-8 glyphicon glyphicon-zoom-in text-left icon-left" name="zoom-icon2" id="{{ el.picture }}"></a>
+            <a class="col-md-2 post-likes vote" ng-click="voteForPost('cityCulture', el.id)">{{ el.likes }}</a>
+            <a class="col-md-2 glyphicon glyphicon-thumbs-up vote" ng-click="voteForPost('cityCulture', el.id)"></a>
+        </li>
+    </ul>
+
+    <!-- City Festivals -->
+    <div  class="row categories-header">
+        <span class="col-md-12 text-center category-name">City Culture  <span class="glyphicon glyphicon-star"></span></span>
+    </div>
+    <hr class="style-two"/>
+    <ul id="5" class="row category-posts">
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4 category-post-holder" data-toggle="modal" data-target="#lightbox"
+            ng-repeat="el in categories['cityFestivals']">
+            <span class="col-md-12 name-town">{{ el.town }}</span>
+            <img src="{{ el.picture }}" ng-click="openPost(el.id, el.town)"/>
+            <a class="col-md-8 glyphicon glyphicon-zoom-in text-left icon-left" name="zoom-icon2" id="{{ el.picture }}"></a>
+            <a class="col-md-2 post-likes vote" ng-click="voteForPost('cityFestivals', el.id)">{{ el.likes }}</a>
+            <a class="col-md-2 glyphicon glyphicon-thumbs-up vote" ng-click="voteForPost('cityFestivals', el.id)"></a>
+        </li>
+    </ul>
 </div>
 
 <!-- Modal image window -->

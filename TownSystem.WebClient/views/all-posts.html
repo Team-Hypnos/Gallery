@@ -10,8 +10,8 @@
 
             <p class="row">
                 <span class="col-md-8 post-title" ng-click="openPost(post.id, post.title)">{{ post.title }}</span>
-                <span class="col-md-2 post-likes vote" ng-click="likePost()">{{ like }}</span>
-                <span class="col-md-2 glyphicon glyphicon-thumbs-up vote" ng-click="likePost()"></span>
+                <span class="col-md-2 post-likes vote" ng-click="likePost(post.id)">{{ post.likes }}</span>
+                <span class="col-md-2 glyphicon glyphicon-thumbs-up vote" ng-click="likePost(post.id)"></span>
             </p>
         </li>
     </ul>
