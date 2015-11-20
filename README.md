@@ -14,7 +14,50 @@ number of votes in other words - by the users.
 ##Class diagram
 ![Class diagram](http://i.imgur.com/McrUnnG.jpg)
 
-## API Methods
+## Bulgaria Best Town Description
+
+`User Roles`
+ * NotRegistered - not registered user
+ * Registered - user with registration
+ * Admin - user with admin rights.
+
+`User`
+
+#### Not Registered
+* Can view all categories, towns, posts, comments
+
+#### Registered
+ * register, login and logout.
+ * create comments, posts, towns
+ * can vote for comments, posts, towns
+ * join event
+
+#### Admin
+* can create, delete categories
+* CRUD operation for all controllers
+
+`Category`
+ * holds events
+
+`Town` 
+* town have 1 or more categories and can have posts and comments.
+* holds comments
+
+`Like`
+* connected to `Post` 
+* can like, dislike post
+
+`Post`
+* every `Town` has posts with different pictures
+* posts can have comments and can be rated(like, dislike)
+
+`Comment`
+* every `Town` post has comments
+
+`Notifications`
+* when new chat message is sent
+* when error occures
+* when given operation is successful
 
 ## GitHub: [Bulgaria Best Town - repository](https://github.com/Team-Hypnos/Gallery)
 
