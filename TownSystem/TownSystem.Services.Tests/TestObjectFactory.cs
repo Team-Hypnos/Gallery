@@ -9,6 +9,7 @@
     using Services.Models.Town;
     using System;
     using Services.Models.Category;
+    using Services.Models.Post;
 
     public static class TestObjectFactory
     {
@@ -81,7 +82,9 @@
 
             postsService.Setup(p => p.All(It.IsAny<int>(), It.IsAny<int>())).Returns(new List<Post>().AsQueryable());
 
-            postsService.Setup(p => p.PostById(It.IsAny<int>())).Returns(posts);
+            postsService.Setup(p => p.PostById(It.IsAny<int>())).Returns(new List<Post>().AsQueryable());
+
+            postsService.Setup(p => p.GetByTownName(It.IsAny<string>())).Returns(new List<Post>().AsQueryable());
 
             return postsService.Object;
         }
@@ -109,6 +112,16 @@
         public static TownDetailsRequestModel GetInvalidTownModel()
         {
             return new TownDetailsRequestModel { Name = "S" };
+        }
+
+        public static PostDetailsRequestModel GetValidPostsModel()
+        {
+            return new PostDetailsRequestModel { Title = "Valid Post", Description = "Valid description", UserId = "Valid username" };
+        }
+
+        public static PostDetailsRequestModel GetInvalidPostsModel()
+        {
+            return new PostDetailsRequestModel { Title = "inv" };
         }
     }
 }

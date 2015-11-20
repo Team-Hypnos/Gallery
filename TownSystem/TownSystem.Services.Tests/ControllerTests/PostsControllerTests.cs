@@ -9,6 +9,7 @@
     using System.Web.Http.Results;
     using System.Collections.Generic;
     using Models.Post;
+    using MyTested.WebApi;
 
     [TestClass]
     public class PostsControllerTests
@@ -34,6 +35,17 @@
             Assert.IsNotNull(okResult);
         }
 
+        [TestMethod]
+        public void PostsGetByIdShouldReturnOkResult()
+        {
+            var controller = new PostsController(this.postsService);
+
+            var result = controller.Get(1);
+
+            var okResult = result as OkNegotiatedContentResult<List<PostDetailsResponseModel>>;
+
+            Assert.IsNotNull(okResult);
+        }
 
         [TestMethod]
         public void PostsGetWithPageAndPageSizeShouldReturnOkResult()
@@ -45,6 +57,40 @@
             var okResult = result as OkNegotiatedContentResult<List<PostDetailsResponseModel>>;
 
             Assert.IsNotNull(okResult);
+        }
+
+        [TestMethod]
+        public void PostsGetByNameShouldReturnOkResult()
+        {
+            var controller = new PostsController(this.postsService);
+
+            var result = controller.Get("Sofia");
+
+            var okResult = result as OkNegotiatedContentResult<List<PostDetailsResponseModel>>;
+
+            Assert.IsNotNull(okResult);
+        }
+
+        [TestMethod]
+        public void PostsPostShouldReturnOkResult()
+        {
+            MyWebApi
+                .Controller<PostsController>()
+                .WithResolvedDependencyFor(this.postsService)
+                .Calling(p => p.Post(TestObjectFactory.GetValidPostsModel()))
+                .ShouldHave()
+                .ValidModelState();
+        }
+
+        [TestMethod]
+        public void PostsPostWithInvalidShouldReturnBadRequestResult()
+        {
+            MyWebApi
+                .Controller<PostsController>()
+                .WithResolvedDependencyFor(this.postsService)
+                .Calling(p => p.Post(TestObjectFactory.GetInvalidPostsModel()))
+                .ShouldHave()
+                .InvalidModelState();
         }
     }
 }
