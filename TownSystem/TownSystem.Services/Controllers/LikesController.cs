@@ -15,7 +15,7 @@
         }
 
         // POST(authorize) api/likes/{postId}
-       // [Authorize]
+        [Authorize]
         [HttpPost]
         [Route("api/like/{id}")]
         public IHttpActionResult Like(int id)
@@ -29,7 +29,7 @@
             return this.Ok();
         }
 
-      //  [Authorize]
+        [Authorize]
         [HttpPost]
         [Route("api/dislike/{id}")]
         public IHttpActionResult Dislike(int id)

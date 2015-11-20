@@ -13,7 +13,7 @@ namespace TownSystem.Services.Controllers
     {
         private readonly IDropboxService dropbox;
         
-       // [Authorize]
+       [Authorize]
         public IHttpActionResult Post(PictureDetailsRequestModel model)
         {
             if (!this.ModelState.IsValid)

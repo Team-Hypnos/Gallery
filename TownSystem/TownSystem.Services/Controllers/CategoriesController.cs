@@ -51,7 +51,7 @@
             return this.Ok(result);
         }
 
-      //  [Authorize(Roles = "Admin")]
+      [Authorize(Roles = "Admin")]
         [HttpPost]
         public IHttpActionResult Post(CategoryDetailsResponseModel model)
         {

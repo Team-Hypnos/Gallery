@@ -19,7 +19,7 @@
     using Results;
     using TownSystem.Models;
 
-   // [Authorize]
+    [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
