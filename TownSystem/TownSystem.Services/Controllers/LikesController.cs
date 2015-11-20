@@ -6,15 +6,12 @@
     public class LikesController : ApiController
     {
         private readonly ILikesService likes;
-        //private readonly IUsersService users;
 
         public LikesController(ILikesService likes, IUsersService users)
         {
             this.likes = likes;
-            //this.users = users;
         }
 
-        // POST(authorize) api/likes/{postId}
         [Authorize]
         [HttpPost]
         [Route("api/like/{id}")]

@@ -33,6 +33,7 @@
 
             return this.Ok(result);
         }
+
         // GET(public) api/posts{postId}
         public IHttpActionResult Get(int id)
         {
@@ -56,7 +57,6 @@
         }
 
         // GET(public) api/posts?town=Name
-
         public IHttpActionResult Get(string town)
         {
             var result = this.posts

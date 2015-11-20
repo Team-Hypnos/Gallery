@@ -9,7 +9,5 @@
         IQueryable<User> ByUsername(string username);
 
         string UserIdByUsername(string username);
-
-        //bool UserIsAdmin(string username);
     }
 }

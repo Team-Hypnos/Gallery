@@ -28,7 +28,6 @@
         {
             var userId = this.users.UserIdByUsername(username);
 
-            //TODO: check for userId
             var like = new Like
             {
                 PostId = postId,
@@ -43,7 +42,6 @@
         {
             var userId = this.users.UserIdByUsername(username);
 
-            //TODO: check for userId
             var like = this.likes
                 .All()
                 .Where(l => l.UserId == userId && l.PostId == postId)

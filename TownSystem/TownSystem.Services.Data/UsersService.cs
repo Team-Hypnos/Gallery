@@ -29,14 +29,5 @@
                 .Select(u => u.Id)
                 .FirstOrDefault();
         }
-
-        //public bool UserIsAdmin(string username)
-        //{
-        //    return this.users
-        //        .All()
-        //        .Where(u => u.UserName == username)
-        //        .Select(u => u.IsAdmin)
-        //        .FirstOrDefault();
-        //}
     }
 }

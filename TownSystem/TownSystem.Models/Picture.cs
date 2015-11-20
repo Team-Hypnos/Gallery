@@ -17,11 +17,9 @@
         [MaxLength(100)]
         public string FilePath { get; set; }
 
-       // [Required]
         public FileExtensionTypes FileExtension { get; set; }
 
-       // [Required]
-        //[MaxLength(100)]
+        [MaxLength(100)]
         public string OriginalFileName { get; set; }
 
         public ICollection<Town> Towns { get; set; }
