@@ -15,12 +15,12 @@ galleryApp.controller('HomeController', function HomeController($scope) {
             name: 'Dobrich'
         },
         {
-            url: "http://static1.squarespace.com/static/54a674c9e4b0375c08453705/54d3e872e4b06da65e8a6a1a/54d93539e4b0853cc2aff163/1442931501486/Kyustendil_night.jpg?format=1500w",
-            name: 'Kyustendil'
-        },
-        {
             url: "http://i66.tinypic.com/33kesdi.jpg",
             name: 'Varna'
+        },
+        {
+            url: "http://i65.tinypic.com/qys2sk.png",
+            name: 'Sofia'
         },
         {
             url: "http://i64.tinypic.com/2vcxlpd.jpg",

@@ -8,7 +8,6 @@ galleryApp.controller('SignInController', function SignInController($scope, $res
             .then(function (data) {
                 window.location.reload();
                 localStorage.setItem('isLoggedIn', true);
-                localStorage.setItem('access_token', data.access_token);
                 localStorage.setItem('username', $scope.username);
                 localStorage.setItem('profilePicture', defaultAvatarPicture);
                 $location.path('/home');

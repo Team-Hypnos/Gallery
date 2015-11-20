@@ -51,6 +51,13 @@ galleryApp.controller('CategoriesController', function CategoriesController($sco
                 likes: 1,
                 category: 'Nature',
                 id: 6
+            },
+            {
+                picture: 'http://i65.tinypic.com/qys2sk.png',
+                town: 'Sofia',
+                likes: 4,
+                category: 'Nature',
+                id: 7
             }]
     };
 

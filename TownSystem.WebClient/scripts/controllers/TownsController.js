@@ -26,6 +26,11 @@ galleryApp.controller('TownsController', function TownsController($scope, $locat
             picture: "http://i64.tinypic.com/2vcxlpd.jpg",
             name: 'Burgas',
             size: 1
+        },
+        {
+            picture: "http://i65.tinypic.com/qys2sk.png",
+            name: 'Sofia',
+            size: 1
         }
     ];
 

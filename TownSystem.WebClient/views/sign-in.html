@@ -104,7 +104,6 @@
         FB.api('/me?fields=id,name,email', function (response) {
             localStorage.setItem('username', response.name);
             localStorage.setItem('isLoggedIn', true);
-            localStorage.setItem('access_token', response.authResponse.accessToken);
             localStorage.setItem('profilePicture', 'http://graph.facebook.com/' + response.id + '/picture?type=large');
             var url = window.location.href;
             var index = url.lastIndexOf('#');
