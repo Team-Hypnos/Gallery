@@ -11,8 +11,11 @@ Bulgaria Best Town is semi-gallery based application which purpose is to find
 which is the best town of Bulgaria for 2015. It will be choosed by the 
 number of votes in other words - by the users.
 
-##Class diagram
+## Database models diagram
 ![Class diagram](http://i.imgur.com/McrUnnG.jpg)
+
+## Class diagram
+![Class diagram](http://i.imgur.com/A9OHJOO.jpg)
 
 ## Bulgaria Best Town Description
 
