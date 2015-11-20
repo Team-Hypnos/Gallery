@@ -18,8 +18,10 @@
     using Providers;
     using Results;
     using TownSystem.Models;
+    using System.Web.Http.Cors;
 
     [Authorize]
+    [EnableCors("*", "*", "*")]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {

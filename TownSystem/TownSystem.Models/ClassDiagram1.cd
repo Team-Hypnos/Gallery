@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Alphabetical">
+  <Class Name="TownSystem.Models.Category">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TownSystem.Models.Comment">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAgAAAAEAAAAAAAgICAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Comment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TownSystem.Models.Like">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAEAAAAAAAgACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Like.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TownSystem.Models.Picture">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCACAAAAAAAAAAAAAAAAAAAAAAAAAAEAFAAAAAAAA=</HashCode>
+      <FileName>Picture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TownSystem.Models.Post">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAgAgAEAAAAAAAAgAAAAAAAACAAAEAQBAIAA=</HashCode>
+      <FileName>Post.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TownSystem.Models.Town">
+    <Position X="8.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgAAAAAAAAAAABAAAAAQAAAAAEBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Town.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TownSystem.Models.User">
+    <Position X="0.5" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgEAACAAAAAAABAAAAAAAAAAAABACAAAAAAAAAAg=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="TownSystem.Models.Enums.CategoryTypes">
+    <Position X="4" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAgAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAIAQAAA=</HashCode>
+      <FileName>Enums\CategoryTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TownSystem.Models.Enums.FileExtensionTypes">
+    <Position X="8.25" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Enums\FileExtensionTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

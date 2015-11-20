@@ -34,17 +34,6 @@
             Assert.IsNotNull(okResult);
         }
 
-        [TestMethod]
-        public void PostsGetByIdShouldReturnOkResult()
-        {
-            var controller = new PostsController(this.postsService);
-
-            var result = controller.Get(1);
-
-            var okResult = result as OkNegotiatedContentResult<PostDetailsResponseModel>;
-
-            Assert.IsNotNull(okResult);
-        }
 
         [TestMethod]
         public void PostsGetWithPageAndPageSizeShouldReturnOkResult()
