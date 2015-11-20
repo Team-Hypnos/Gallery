@@ -89,6 +89,22 @@
             return postsService.Object;
         }
 
+        public static ILikesService GetLikeService()
+        {
+            var likeService = new Mock<ILikesService>();
+
+            likeService.Setup(l => l.LikePost(It.IsAny<int>(), It.IsAny<string>()));
+
+            return likeService.Object;
+        }
+
+        public static IUsersService GetUserService()
+        {
+            var userService = new Mock<IUsersService>();
+
+            return userService.Object;
+        }
+
         public static CategoryDetailsResponseModel GetValidCategoryModel()
         {
             return new CategoryDetailsResponseModel { Name = "Valid category" };

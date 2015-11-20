@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="ControllerTests\CategoriesControllerTests.cs" />
     <Compile Include="ControllerTests\CommentsControllerTests.cs" />
+    <Compile Include="ControllerTests\LikesControllerTests.cs" />
     <Compile Include="ControllerTests\PostsControllerTests.cs" />
     <Compile Include="ControllerTests\TownsControllerTests.cs" />
     <Compile Include="IntegrationTests\CategoriesIntegrationTests.cs" />
