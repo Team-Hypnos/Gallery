@@ -13,8 +13,7 @@ number of votes in other words - by the users.
 
 ## Database models diagram
 ![Class diagram](http://i.imgur.com/McrUnnG.jpg)
-
-## C# database models diagram
+## C# Web API diagram
 ![Class diagram](http://i.imgur.com/A9OHJOO.jpg)
 ## Services diagram
 ![Class diagram](http://i.imgur.com/B3nx2uW.jpg)
