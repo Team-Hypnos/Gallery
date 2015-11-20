@@ -12,6 +12,7 @@
     using TownSystem.Models;
     using System;
     using TownSystem.Services.Models.Comment;
+    using TownSystem.Services.Infrastructure.Validation;
 
     public class PostsController : ApiController
     {
@@ -69,13 +70,9 @@
         
         // POST(authorize) api/posts
         [Authorize]
+        [ValidateModel]
         public IHttpActionResult Post(PostDetailsRequestModel model)
-        {
-            if (!this.ModelState.IsValid)
-            {
-                return this.BadRequest(this.ModelState);
-            }
-                      
+        {                   
             var createdPost = this.posts.Add(
                 model.Title,
                 model.Description,
@@ -88,28 +85,16 @@
         }
 
         // POST(authorize) api/posts/{id}/comment -> create new comment for selected post 
-        
         [HttpPost]
         [Route("api/posts/{id}/comment")]
         [Authorize]
+        [ValidateModel]
         public IHttpActionResult Post(int id, CommentDetailsRequestModel model)
         {
-            if (!this.ModelState.IsValid)
-            {
-                return this.BadRequest(this.ModelState);
-            }
-
             var createdComment = this.posts
                 .AddCommnet(id, model.Content, DateTime.Now, this.User.Identity.GetUserId(), false);
 
             return this.Ok(createdComment);
         }
-
-        // POST(authorize) api/post/{id}/like -> like for selected post
-        //[HttpPut]
-        //[Route("api/posts/{id}/like")]
-        //[Authorize]
-
-        //public IHttpActionResult Put(int id, )
     }
 }
